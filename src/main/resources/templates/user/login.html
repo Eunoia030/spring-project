@@ -6,24 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>로그인</title>
     <!-- font -->
-    <link rel="stylesheet" href="../../static/assets/font/font.css" />
+    <link rel="stylesheet" href="/assets/font/font.css" />
     <!-- css -->
-    <link rel="stylesheet" href="../../static/assets/css/common.css" />
-    <link rel="stylesheet" href="../../static/assets/css/login.css" />
+    <link rel="stylesheet" href="/assets/css/common.css" />
+    <link rel="stylesheet" href="/assets/css/login.css" />
   </head>
   <body>
     <div class="wrapper">
       <div class="container">
         <div class="subArea">
           <div class="goToBackArea">
-            <a href="#메인페이지" class="goToBack">
+            <a th:href="@{/}" class="goToBack">
               <span>메인페이지로 이동</span>
-              <img src="../../static/images/gotobeforeIcon2.png" />
+              <img src="/images/gotobeforeIcon2.png" />
             </a>
           </div>
           <div class="logoArea">
             <a class="logo">
-              <img src="../../static/images/logo.png" />
+              <img src="/images/logo.png" />
             </a>
           </div>
           <div class="title">
@@ -48,7 +48,7 @@
           <div class="mainInner">
             <div>
               <form
-                action="./login.html"
+                th:action="@{/user/login}"
                 method="post"
                 id="form"
                 onsubmit="return dobuleCheck();"
@@ -65,13 +65,13 @@
                   <div class="inputWrapper">
                     <input type="password" id="pw" name="pw" />
                     <button type="button">
-                      <img src="../../static/images/eye_see.png" alt="" />
+                      <img src="/images/eye_see.png" alt="" />
                       <span>비밀번호 표시하기</span>
                     </button>
                   </div>
                   <p id="pwGuidMsg" class="guideMsg"></p>
                   <div class="goToFindPw">
-                    <a href="./find_pw.html">비밀번호 찾기</a>
+                    <a th:href="@{/user/find_pw}">비밀번호 찾기</a>
                   </div>
                 </div>
                 <div class="checkbox">
@@ -82,7 +82,7 @@
                 </div>
                 <div class="btnArea">
                   <button type="submit" class="btnL btnStyleB">
-                    가입 완료하기
+                    로그인
                   </button>
                 </div>
               </form>
@@ -94,7 +94,7 @@
                   <button
                     type="button"
                     class="btnL btnStyleC"
-                    onclick="location.href='./join.html'"
+                    onclick="location.href='/user/join'"
                   >
                     회원 가입하기
                   </button>
@@ -107,5 +107,5 @@
     </div>
   </body>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="../../static/assets/js/login.js"></script>
+  <script src="/assets/js/login.js"></script>
 </html>

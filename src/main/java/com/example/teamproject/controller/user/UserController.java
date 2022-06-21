@@ -7,11 +7,11 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 @Slf4j
@@ -43,6 +43,22 @@ public class UserController {
         log.info("*************");
         log.info("로그인");
         log.info("*************");
+        return "/user/login";
+    }
+    @PostMapping("/login")
+    public String login(String email, String pw, HttpSession session){
+        log.info("*************");
+        log.info("로그인 시도");
+        log.info("*************");
+        log.info(userService.login(email).getPw());
+        if(pw.equals(userService.login(email).getPw())){
+            log.info("xxx");
+            // 로그인 성공
+            session.setAttribute("email", email);
+            session.setAttribute("name", userService.login(email).getName());
+            return "/user/mypage";
+        }
+        // 로그인 실패
         return "/user/login";
     }
 
@@ -88,13 +104,19 @@ public class UserController {
 
     // 이메일 중복확인
     @PostMapping("/checkEmail")
-    public boolean checkEmail(String email){
-        return false;
+    @ResponseBody
+    public int checkEmail(String email){
+        return 0;
     }
 
     // 이름 중복확인
     @PostMapping("/checkId")
-    public boolean checkId(String id){
+    @ResponseBody
+    public boolean checkName(@RequestBody String name){
+        log.info(name);
+        if(userService.checkName(name) <= 0){
+            return true;
+        }
         return false;
     }
 

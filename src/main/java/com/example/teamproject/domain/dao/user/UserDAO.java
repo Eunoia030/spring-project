@@ -3,6 +3,7 @@ package com.example.teamproject.domain.dao.user;
 import com.example.teamproject.domain.vo.UserVO;
 import com.example.teamproject.mapper.UserMapper;
 import lombok.RequiredArgsConstructor;
+import org.apache.catalina.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -17,14 +18,19 @@ public class UserDAO {
         userMapper.insert(userVO);
     };
 
+    // 이메일 조회(중복체크)
+    public int checkEmail(String email){
+        return  userMapper.checkEmail(email);
+    }
+
     // 아이디 조회(중복체크)
-    public int checkId(String email){
-        return  userMapper.checkId(email);
+    public int checkName(String email){
+        return  userMapper.checkName(email);
     }
 
     // 로그인
-    public UserVO login(UserVO userVO){
-        return userMapper.login(userVO);
+    public UserVO login(String email){
+        return userMapper.login(email);
     }
 
     // 회원 1명 조회

@@ -25,7 +25,7 @@ public class ProductController {
         log.info("*************");
         log.info("판매 상품정보 작성");
         log.info("*************");
-        return "/product/register";
+        return "/product/product";
     }
 //    @PostMapping("/register")
 //    public String register(ProductVO productVO, RedirectAttributes rttr){
@@ -42,7 +42,7 @@ public class ProductController {
         log.info("상품 리스트");
         log.info("*************");
         // 상품 리스트
-        return "/product/list";
+        return "/product/sell_list";
     }
 
     @GetMapping("/detail")

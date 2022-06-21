@@ -7,21 +7,21 @@
     <title>비밀번호 찾기</title>
     <!-- css -->
     <link rel="stylesheet" href="/assets/css/common.css" />
-    <link rel="stylesheet" href="/assets/css/common.css" />
+    <link rel="stylesheet" href="/assets/css/find_pw.css" />
   </head>
   <body>
     <div class="wrapper">
       <div class="container">
         <div class="subArea">
           <div class="goToBackArea">
-            <a href="./login.html" class="goToBack">
+            <a th:href="@{/user/login}" class="goToBack">
               <span>메인페이지로 이동</span>
-              <img th:src="@{/images/gotobeforeIcon2.png}" />
+              <img src="/images/gotobeforeIcon2.png" />
             </a>
           </div>
           <div class="logoArea">
             <a class="logo">
-              <img th:src="@{/images/logo.png}" />
+              <img src="/images/logo.png" />
             </a>
           </div>
           <div class="title">
@@ -50,7 +50,7 @@
         <div class="mainArea">
           <div class="mainInner">
             <form
-              action="./login.html"
+              th:action="@{/user/login}"
               method="post"
               id="form"
               onsubmit="return dobuleCheck();"
@@ -74,6 +74,6 @@
       </div>
     </div>
   </body>
-  <script th:src="@{https://code.jquery.com/jquery-3.6.0.min.js}"></script>
-  <script th:src="@{/assets/js/find_pw.js}"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/assets/js/find_pw.js"></script>
 </html>

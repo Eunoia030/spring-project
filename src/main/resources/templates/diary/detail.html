@@ -1,20 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>다이어리 상세보기</title>
 
-    <link type="text/css" rel="stylesheet" href="../../static/assets/css/common_diary.css" />
-    <link type="text/css" rel="stylesheet" href="../../static/assets/css/list.css" />
-    <link type="text/css" rel="stylesheet" href="../../static/assets/css/t1.css" />
-    <link type="text/css" rel="stylesheet" href="../../static/assets/css/diary_detail.css" />
-    <link type="text/css" rel="stylesheet" href="../../static/assets/css/comment.css" />
-    <link type="text/css" rel="stylesheet" href="../../static/bootstrap-5.1.3-dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/css/common_diary.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/css/list.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/css/t1.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/css/diary_detail.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/css/comment.css" />
+    <link type="text/css" rel="stylesheet" href="/bootstrap-5.1.3-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/header.css" />
+    <link rel="stylesheet" href="/assets/css/footer.css" />
 
 </head>
-<body id="st-body" class="homepage fullsize">	
+<body>
+<header>
+    <div class="header_container">
+        <div class="menubar">
+            <a>
+                <img src="/images/134216_menu_lines_hamburger_icon.png">
+            </a>
+        </div>
+        <div class="logo">
+            <img src="/images/logo.png">
+        </div>
+        <div class="selectbar">
+            <form action="">
+                <img src="/images/4801315_glass_magnifier_magnifying_search_searching_icon.png" >
+                <input type="text" placeholder="검색어 입력">
+            </form>
+        </div>
+        <div class="mypage">
+            <ul>
+                <li class="login">
+                    <a>
+                        <img src="/images/4092564_profile_about_mobile ui_user_icon.png">
+                        <span>Hej! 로그인 또는 가입하기</span>
+                    </a>
+                </li>
+                <li class="message"><a><img src="/images/622401_mail_packet_email_envelope_letter_icon.png"></a></li>
+                <li class="heart"><a><img src="/images/216236_heart_icon.png"></a></li>
+                <li class="cart"><a><img src="/images/6351908_bag_basket_cart_ecommerce_shop_icon.png"></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="menubtn">
+        <a href="">여행자 기념품 </a>
+        <a href="">여행 다이어리</a>
+        <a href="">기념품 요청</a>
+    </div>
+</header>
+<div id="st-body" class="homepage fullsize">
+
+
+
+
     <div id="wrapper">
         
     <div id="main" role="main">
@@ -27,8 +70,9 @@ background-repeat: no-repeat;
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
-background-size: cover;	
-background-image: url('http://linkandleave.com/files/2017/02/23/6e006508201242416d4d62cc6e260ac3143147.jpg'); 
+background-size: cover;
+    height: 400px;
+background-image: url('http://linkandleave.com/files/2017/02/23/6e006508201242416d4d62cc6e260ac3143147.jpg');
 }
 #main-content-header {min-height: 210px}
 </style>
@@ -87,7 +131,7 @@ background-image: url('http://linkandleave.com/files/2017/02/23/6e00650820124241
 
 <div id="vContent" class="content">
             <a>
-                <img src="../../static/images/menton-g64ddb272f_640.jpg">
+                <img src="/images/menton-g64ddb272f_640.jpg">
             </a>
 
     <p>3년 전 북유럽을 통해 다녀온 적이 있었다.</p><p><br></p><p>그때 좋은 추억 정말 즐거웠는데.. 이번엔 드디어 꿈에 그리던 남프랑스로 6박8일 여행이 시작되었다.</p><p>결론부터 말하자면 너너너 너~~~무 좋았다.</p><p><br></p><p>출발 전, 꼼꼼한 준비로 당황하지 않고.</p><p>프랑스에 15년 살아온 지인의 풍부한 경험과 지식</p><p>꼼꼼하면서도 섬세한 일정과 배려로 아쉽지 않은 여행이 되었다.</p>		
@@ -457,6 +501,56 @@ background-image: url('http://linkandleave.com/files/2017/02/23/6e00650820124241
 </section>
 
 </div>
+        </div>
+        <footer>
+                <div class="footer_container">
+                    <div class="footer_wrap">
+                        <div class="footer_copyright">
+                            <p>© 2022 Company, Inc. All rights reserved.</p>
+                        </div>
+
+                        <div class="footer_use">
+                            <ul class="">
+                                <li class=""><a class=""></a>개인정보처리방침</li>
+                                <li class=""><a href=""></a>쿠키 정책</li>
+                                <li class=""><a href=""></a>쿠키 설정</li>
+                                <li class=""><a href=""></a>웹사이트 이용약관</li>
+                                <li class=""><a href=""></a>Responsible disclosure</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="team">
+                        <p > captin corin </p>
+                        <p> 고혁배 김지나 나기업 김정관 안요셉 이진성 강승훈</p>
+                    </div>
+                    <div class="footer_icons">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <img src="/images/5279111_network_fb_social media_facebook_facebook logo_icon.png" >
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="/images/1161953_instagram_icon.png" >
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="/images/211929_social_youtube_icon.png" >
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="/images/8679415_kakao_talk_fill_icon.png" >
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+
+
 
 
     

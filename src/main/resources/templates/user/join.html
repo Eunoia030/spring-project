@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>회원가입</title>
-    <link rel="stylesheet" href="../../static/assets/css/common.css" />
-    <link rel="stylesheet" href="../../static/assets/css/join.css" />
+    <link rel="stylesheet" href="/assets/css/common.css" />
+    <link rel="stylesheet" href="/assets/css/join.css" />
   </head>
   <body>
     <div class="wrapper">
@@ -14,14 +14,14 @@
       <div class="mainContainer">
         <div class="subArea">
           <div class="goToBackArea">
-            <a href="./login.html" class="goToBack">
+            <a th:href="@{/user/login}" class="goToBack">
               <span>로그인페이지로 이동</span>
-              <img src="../../static/images/gotobeforeIcon2.png" />
+              <img src="/images/gotobeforeIcon2.png" />
             </a>
           </div>
           <div class="logoArea">
             <a class="logo">
-              <img src="../../static/images/logo.png" />
+              <img src="/images/logo.png" />
             </a>
           </div>
           <div class="title">
@@ -30,7 +30,7 @@
           <div class="guideArea">
             <div>
               <span>이미 가입하셨나요?</span>
-              <a href="../user/login.html">로그인 하기</a>
+              <a th:href="@{/user/login}">로그인 하기</a>
             </div>
           </div>
           <!-- <div class="imgArea"></div> -->
@@ -52,10 +52,10 @@
           <div class="mainInner">
             <div>
               <form
-                action="./login.html"
+                action="/user/join"
                 method="post"
                 id="form"
-                onsubmit="return dobuleCheck();"
+                onsubmit="return doubleCheck();"
               >
                 <ul class="inputArea">
                   <li>
@@ -66,11 +66,11 @@
                     <p id="nameGuidMsg" class="guideMsg">이름을 입력하세요</p>
                   </li>
                   <li>
-                    <label for="contents">자기소개</label>
+                    <label for="cover">자기소개</label>
                     <div class="textareaWrapper">
                       <textarea
-                        id="contents"
-                        name="contents"
+                        id="cover"
+                        name="cover"
                         wrap="soft"
                       ></textarea>
                     </div>
@@ -88,7 +88,7 @@
                     <div class="inputWrapper">
                       <input type="password" id="pw" name="pw" />
                       <button type="button">
-                        <img src="../../static/images/eye_see.png" alt="" />
+                        <img src="/images/eye_see.png"/>
                         <span>비밀번호 표시하기</span>
                       </button>
                     </div>
@@ -119,9 +119,7 @@
                       />
                       <label for="check02">
                         <span> (필수) 개인정보 수집ㆍ이용에 동의합니다. </span>
-                        <a href="#개인정보수집이용동의"
-                          >개인정보 수집ㆍ이용 동의</a
-                        >
+                        <a href="#개인정보수집이용동의">개인정보 수집ㆍ이용 동의</a>
                       </label>
                     </div>
                     <p id="check02GuidMsg" class="guideMsg"></p>
@@ -142,5 +140,6 @@
     </div>
   </body>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="../../static/assets/js/join.js"></script>
+  <script src="/assets/js/joinService.js"></script>
+  <script src="/assets/js/join.js"></script>
 </html>

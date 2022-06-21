@@ -1,8 +1,8 @@
 // 비밀번호 보기/감추기
 $("#pw + button").click(() => {
   let eye = $("#pw + button").children("img");
-  let see = "../../static/images/eye_see.png";
-  let nosee = "../../static/images/eye_nosee.png";
+  let see = "/images/eye_see.png";
+  let nosee = "/images/eye_nosee.png";
   if (eye.attr("src") == see) {
     eye.attr("src", nosee);
     $("#pw").attr("type", "text");
@@ -74,14 +74,19 @@ const checkName = () => {
     $("#nameGuidMsg").removeAttr("style");
   }
   // 중복 확인
-  // joinService.checkDuplication($("#name").val(), (result) => {
-  //   if (result) {
-  //     // 중복인 경우
-  //     $("#name").attr("style", "border-color:#e00751;");
-  //     $("#nameGuidMsg").text("중복된 이름이 존재합니다.");
-  //     $("#nameGuidMsg").attr("style", "display:block;");
-  //   }
-  // });
+  joinService.checkDuplication($("#name").val(), (result) => {
+    if (result) {
+      // 중복인 경우
+      $("#name").attr("style", "border-color:#e00751;");
+      $("#nameGuidMsg").text("중복된 이름이 존재합니다.");
+      $("#nameGuidMsg").attr("style", "display:block;");
+      console.log(result);
+      return false;
+    } else {
+      $("#name").removeAttr("style");
+      $("#nameGuidMsg").removeAttr("style");
+    }
+  });
   return true;
 };
 const checkEmail = () => {
@@ -187,7 +192,8 @@ $(document).ready(() => {
     console.log(checkInputcheck02());
   });
 });
-const dobuleCheck = () => {
+const doubleCheck = () => {
+  console.log("d");
   if (
     checkName() &&
     checkEmail() &&

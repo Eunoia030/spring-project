@@ -17,16 +17,25 @@ public class UserServiceImpl {
     // 회원 등록
     public void register(UserVO userVO) {
         userDAO.register(userVO);
+    };
+    // 이메일 중복 확인
+    public int checkEmail(String email) {
+        return userDAO.checkEmail(email);
+    }
+    // 이메일 중복 확인
+    public int checkName(String name) {
+        return userDAO.checkName(name);
     }
 
-    ;
+    // 비밀번호 조회(로그인)
+    public UserVO login(String email){
+        return userDAO.login(email);
+    }
 
     // 회원 1명 조회
     public UserVO read(String email) {
         return userDAO.read(email);
-    }
-
-    ;
+    };
 
     // 회원 수정
     public int modify(UserVO userVO) {

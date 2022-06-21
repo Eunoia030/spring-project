@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+
+        .container > .selection .menubar .selectbar {
+            float: left;
+        }
+
+
+        .plp-page-container {
+            max-width: 112rem;
+            margin: 0 auto;
+            padding: 0 1.25rem;
+
+        }
+
+
+        .bar {
+            position: relative;
+            margin-left: 148px;
+            margin-bottom: 28px;
+            min-height: 1.5rem;
+            margin-top: 16px;
+        }
+
+        select {
+            border-radius: 92px;
+            box-shadow: 0px 4px 16px 1px rgb(0 0 0 / 20%);
+            padding: 0.5rem;
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/assets/css/product_header.css"/>
+
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/Vendor/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/Vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/assets/css/util.css">
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/product_main.css">
+    <link rel="stylesheet" href="/assets/css/header.css" />
+    <link rel="stylesheet" href="/assets/css/footer.css" />
+
+
+    <title>sell_list</title>
+</head>
+<body>
+
+
+<main class ="plp-page-container">
+    <div class="container__inner">
+
+        <header>
+            <div class="header_container">
+                <div class="menubar">
+                    <a>
+                        <img src="/images/134216_menu_lines_hamburger_icon.png">
+                    </a>
+                </div>
+                <div class="logo">
+                    <img src="/images/logo.png">
+                </div>
+                <div class="selectbar">
+                    <form action="">
+                        <img src="/images/4801315_glass_magnifier_magnifying_search_searching_icon.png" >
+                        <input type="text" placeholder="검색어 입력">
+                    </form>
+                </div>
+                <div class="mypage">
+                    <ul>
+                        <li class="login">
+                            <a>
+                                <img src="/images/4092564_profile_about_mobile ui_user_icon.png">
+                                <span>Hej! 로그인 또는 가입하기</span>
+                            </a>
+<<<<<<< HEAD
+=======
+                            <div id="mask1"></div>
+                            <div class ="slide_menu1">
+
+
+                                <section class="header_side">
+                                    <div class="menu_close1"><button type="button" class="btn_menu_close1"><img  src="../../static/images/x_106506.png"></button>
+                                    </div>
+                                    <div class ="header_content">
+                                        <h2>Hej
+                                            <sapn class="header__username"></sapn>
+                                        </h2>
+                                        <a role="button" class="btn btn--small btn--primary-inverse" href="https://www.ikea.com/kr/ko/profile/login?itm_campaign=logged-out&amp;itm_element=slider&amp;itm_content=login" id="header__button"
+                                           style="display: flex; justify-content: end;">
+
+                                            <span class="btn__inner">로그인</span></a>
+                                    </div>
+                                    <ul class="sidebar">
+                                        <li>
+                                            <a class="sidebar_tag">
+                                                <div class="sidebar_tag-content">
+                                                    <div class="sidebar_tag-content-text">
+                                                        <h3>계정생성하기</h3>
+                                                        <div>계정을 생성하여 IKEA Family 클럽에 지금 가입해보세요,가입은 무료입니다!</div>
+                                                    </div>
+                                                    <button type="button" class="btn" aria-hidden="true" tabindex="-1">
+                                                <span class="btn__inner" style="align-items:stretch">
+                                                    <svg focusable="false" viewBox="0 0 24 24" class="svg-icon" aira-hidden="true">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="m16.415 12.0011-8.0012 8.0007-1.4141-1.4143 6.587-6.5866-6.586-6.5868L8.415 4l8 8.0011z"></path>
+                                                    </svg>
+                                                </span>
+                                                    </button>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+
+
+                                </section>
+
+                                <section class="body_side">
+                                    <ul class="menu_list">
+                                        <li><a href="#">로그인</a></li>
+                                        <li><a href="#">구매 내역</a></li>
+                                        <li><a href="#">위시리스트</a></li>
+                                        <li><a href="#">플래너</a></li>
+                                        <li><a href="#">배송 조회</a></li>
+                                    </ul>
+
+                                </section>
+
+
+
+
+                            </div>
+
+>>>>>>> a4a5d3c3e8545d3086224ea89b54429914d8c6cc
+                        </li>
+                        <li class="message"><a><img src="/images/622401_mail_packet_email_envelope_letter_icon.png"></a></li>
+                        <li class="heart"><a><img src="/images/216236_heart_icon.png"></a></li>
+                        <li class="cart"><a><img src="/images/6351908_bag_basket_cart_ecommerce_shop_icon.png"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menubtn">
+                <a href="">여행자 기념품 </a>
+                <a href="">여행 다이어리</a>
+                <a href="">기념품 요청</a>
+            </div>
+        </header>
+
+
+
+
+        <div class="bar">
+            <select onchange="categoryChange(this)">
+                <option>대륙</option>
+                <option value="아시아">아시아</option>
+                <option value="유럽">유럽</option>
+                <option value="아프리카">아프리카</option>
+                <option value="남아메리카">남아메리카</option>
+                <option value="북아메리카">북아메리카</option>
+                <option value="오스트레일리아">오스트레일리아</option>
+            </select>
+
+            <select id="good">
+                <option>나라</option>
+            </select>
+        </div>
+
+
+        <!-- Product -->
+        <div class="container">
+
+
+
+
+
+            <div class="row isotope-grid">
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-pic hov-img0">
+                            <img src="/images/aa.jpg" alt="IMG-PRODUCT">
+
+                            <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+                                Quick View
+                            </a>
+                        </div>
+
+                        <div class="block2-txt flex-w flex-t p-t-14">
+                            <div class="block2-txt-child1 flex-col-l ">
+                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                    에펠탑
+                                </a>
+
+                                <span class="stext-105 cl3">
+									$16.64
+								</span>
+                            </div>
+
+                            <div class="block2-txt-child2 flex-r p-t-3">
+                                <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                    <img class="icon-heart1 dis-block trans-04" src="/images/icon-heart-01.png" alt="ICON">
+                                    <img class="icon-heart2 dis-block trans-04 ab-t-l" src="/images/icon-heart-02.png" alt="ICON">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-pic hov-img0">
+                            <img src="/images/aa.jpg" alt="IMG-PRODUCT">
+
+                            <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+                                Quick View
+                            </a>
+                        </div>
+
+                        <div class="block2-txt flex-w flex-t p-t-14">
+                            <div class="block2-txt-child1 flex-col-l ">
+                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                    에펠탑
+                                </a>
+
+                                <span class="stext-105 cl3">
+									$16.64
+								</span>
+                            </div>
+
+                            <div class="block2-txt-child2 flex-r p-t-3">
+                                <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                    <img class="icon-heart1 dis-block trans-04" src="/images/icon-heart-01.png" alt="ICON">
+                                    <img class="icon-heart2 dis-block trans-04 ab-t-l" src="/images/icon-heart-02.png" alt="ICON">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-pic hov-img0">
+                            <img src="/images/aa.jpg" alt="IMG-PRODUCT">
+
+                            <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+                                Quick View
+                            </a>
+                        </div>
+
+                        <div class="block2-txt flex-w flex-t p-t-14">
+                            <div class="block2-txt-child1 flex-col-l ">
+                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                    에펠탑
+                                </a>
+
+                                <span class="stext-105 cl3">
+									$16.64
+								</span>
+                            </div>
+
+                            <div class="block2-txt-child2 flex-r p-t-3">
+                                <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                    <img class="icon-heart1 dis-block trans-04" src="/images/icon-heart-01.png" alt="ICON">
+                                    <img class="icon-heart2 dis-block trans-04 ab-t-l" src="/images/icon-heart-02.png" alt="ICON">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-pic hov-img0">
+                            <img src="/images/aa.jpg" alt="IMG-PRODUCT">
+
+                            <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+                                Quick View
+                            </a>
+                        </div>
+
+                        <div class="block2-txt flex-w flex-t p-t-14">
+                            <div class="block2-txt-child1 flex-col-l ">
+                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                    에펠탑
+                                </a>
+
+                                <span class="stext-105 cl3">
+									$16.64
+								</span>
+                            </div>
+
+                            <div class="block2-txt-child2 flex-r p-t-3">
+                                <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                    <img class="icon-heart1 dis-block trans-04" src="/images/icon-heart-01.png" alt="ICON">
+                                    <img class="icon-heart2 dis-block trans-04 ab-t-l" src="/images/icon-heart-02.png" alt="ICON">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-pic hov-img0">
+                            <img src="/images/aa.jpg" alt="IMG-PRODUCT">
+
+                            <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+                                Quick View
+                            </a>
+                        </div>
+
+                        <div class="block2-txt flex-w flex-t p-t-14">
+                            <div class="block2-txt-child1 flex-col-l ">
+                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                    에펠탑
+                                </a>
+
+                                <span class="stext-105 cl3">
+									$16.64
+								</span>
+                            </div>
+
+                            <div class="block2-txt-child2 flex-r p-t-3">
+                                <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                    <img class="icon-heart1 dis-block trans-04" src="/images/icon-heart-01.png" alt="ICON">
+                                    <img class="icon-heart2 dis-block trans-04 ab-t-l" src="/images/icon-heart-02.png" alt="ICON">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-pic hov-img0">
+                            <img src="/images/aa.jpg" alt="IMG-PRODUCT">
+
+                            <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+                                Quick View
+                            </a>
+                        </div>
+
+                        <div class="block2-txt flex-w flex-t p-t-14">
+                            <div class="block2-txt-child1 flex-col-l ">
+                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                    에펠탑
+                                </a>
+
+                                <span class="stext-105 cl3">
+									$16.64
+								</span>
+                            </div>
+
+                            <div class="block2-txt-child2 flex-r p-t-3">
+                                <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                    <img class="icon-heart1 dis-block trans-04" src="/images/icon-heart-01.png" alt="ICON">
+                                    <img class="icon-heart2 dis-block trans-04 ab-t-l" src="/images/icon-heart-02.png" alt="ICON">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-pic hov-img0">
+                            <img src="/images/aa.jpg" alt="IMG-PRODUCT">
+
+                            <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+                                Quick View
+                            </a>
+                        </div>
+
+                        <div class="block2-txt flex-w flex-t p-t-14">
+                            <div class="block2-txt-child1 flex-col-l ">
+                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                    에펠탑
+                                </a>
+
+                                <span class="stext-105 cl3">
+									$16.64
+								</span>
+                            </div>
+
+                            <div class="block2-txt-child2 flex-r p-t-3">
+                                <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                    <img class="icon-heart1 dis-block trans-04" src="/images/icon-heart-01.png" alt="ICON">
+                                    <img class="icon-heart2 dis-block trans-04 ab-t-l" src="/images/icon-heart-02.png" alt="ICON">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-pic hov-img0">
+                            <img src="/images/aa.jpg" alt="IMG-PRODUCT">
+
+                            <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+                                Quick View
+                            </a>
+                        </div>
+
+                        <div class="block2-txt flex-w flex-t p-t-14">
+                            <div class="block2-txt-child1 flex-col-l ">
+                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                    에펠탑
+                                </a>
+
+                                <span class="stext-105 cl3">
+									$16.64
+								</span>
+                            </div>
+
+                            <div class="block2-txt-child2 flex-r p-t-3">
+                                <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                    <img class="icon-heart1 dis-block trans-04" src="/images/icon-heart-01.png" alt="ICON">
+                                    <img class="icon-heart2 dis-block trans-04 ab-t-l" src="/images/icon-heart-02.png" alt="ICON">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+
+<!--===============================================================================================-->
+<script src="/Vendor/jquery/jquery-3.2.1.min.js"></script>
+
+<script src="/Vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="/Vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="/Vendor/parallax100/parallax100.js"></script>
+<script>
+    $('.parallax100').parallax100();
+</script>
+<!--===============================================================================================-->
+<script src="/Vendor/isotope/isotope.pkgd.min.js"></script>
+<!--===============================================================================================-->
+<script src="/Vendor/sweetalert/sweetalert.min.js"></script>
+<script>
+    $('.js-addwish-b2, .js-addwish-detail').on('click', function(e){
+        e.preventDefault();
+    });
+
+    $('.js-addwish-b2').each(function(){
+        var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
+        $(this).on('click', function(){
+            swal(nameProduct, "is added to wishlist !", "success");
+
+            $(this).addClass('js-addedwish-b2');
+            $(this).off('click');
+        });
+    });
+
+    $('.js-addwish-detail').each(function(){
+        var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
+
+        $(this).on('click', function(){
+            swal(nameProduct, "is added to wishlist !", "success");
+
+            $(this).addClass('js-addedwish-detail');
+            $(this).off('click');
+        });
+    });
+
+
+
+
+
+</script>
+
+
+<script>
+    function categoryChange(e) {
+        var good_a = ["일본", "중국", "몽골", "러시아"];
+        var good_b = ["영국", "프랑스", "폴란드", "터키", "이탈리아","스페인"];
+        var good_c = ["모로코", "마다가스카르", "콩고"];
+        var good_d = ["아르헨티나","칠레", "에콰도르", "베네수엘라"];
+        var good_e = ["캐나다", "미국", "그린란드", "멕시코", "쿠바"];
+        var good_f = ["호주"];
+        var target = document.getElementById("good");
+
+        if(e.value == "아시아") var d = good_a;
+        else if(e.value == "유럽") var d = good_b;
+        else if(e.value == "아프리카") var d = good_c;
+        else if(e.value == "남아메리카") var d = good_d;
+        else if(e.value == "북아메리카") var d = good_e;
+        else if(e.value == "오스트레일리아") var d = good_f;
+
+        target.options.length = 0;
+
+        for (x in d) {
+            var opt = document.createElement("option");
+            opt.value = d[x];
+            opt.innerHTML = d[x];
+            target.appendChild(opt);
+        }
+    }
+
+
+
+    <!-- 사이드바 ------------------------------------------ -->
+
+    $(document).ready(function(){
+        $(".btn_menu_open").click(function(){
+            $("#mask").fadeIn(100);
+            $(".slide_menu").show().animate({left: "0"});
+        });
+        $("#mask, .btn_menu_close").click(function(){
+            $("#mask").fadeOut(100);
+            $(".slide_menu").hide().animate({left: "0"});
+        });
+
+
+        $(".btn_menu_open1").click(function(){
+            $("#mask1").fadeIn(100);
+            $(".slide_menu1").show().animate({right: "0"});
+        });
+        $("#mask1, .btn_menu_close1").click(function(){
+            $("#mask1").fadeOut(100);
+            $(".slide_menu1").hide().animate({right: "0"});
+        });
+
+    });
+</script>
+
+<footer>
+    <div class="footer_container">
+        <div class="footer_wrap">
+            <div class="footer_copyright">
+                <p>© 2022 Company, Inc. All rights reserved.</p>
+            </div>
+
+            <div class="footer_use">
+                <ul class="">
+                    <li class=""><a class=""></a>개인정보처리방침</li>
+                    <li class=""><a href=""></a>쿠키 정책</li>
+                    <li class=""><a href=""></a>쿠키 설정</li>
+                    <li class=""><a href=""></a>웹사이트 이용약관</li>
+                    <li class=""><a href=""></a>Responsible disclosure</li>
+                </ul>
+            </div>
+        </div>
+        <div class="team">
+            <p > captin corin </p>
+            <p> 고혁배 김지나 나기업 김정관 안요셉 이진성 강승훈</p>
+        </div>
+        <div class="footer_icons">
+            <ul>
+                <li>
+                    <a href="">
+                        <img src="/images/5279111_network_fb_social media_facebook_facebook logo_icon.png" >
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="/images/1161953_instagram_icon.png" >
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="/images/211929_social_youtube_icon.png" >
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="/images/8679415_kakao_talk_fill_icon.png" >
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+</body>
+
+
+
+</html>

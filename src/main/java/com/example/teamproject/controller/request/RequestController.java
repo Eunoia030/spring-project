@@ -56,6 +56,7 @@ public class RequestController {
         log.info("상품 요청글 상세");
         log.info("*************");
         // 상품 요청글 상세
+
         return "/request/detail";
     }
 

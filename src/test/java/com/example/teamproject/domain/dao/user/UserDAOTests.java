@@ -24,6 +24,29 @@ public class UserDAOTests {
         userVO.setCover("테스트입니다.");
         userDAO.register(userVO);
     };
+    // 이메일 중복 확인
+    @Test
+    public void checkEmailTest(){
+        String emailTrue = "testttttttttttttt@aaaaaaaa.com";
+        String emailFalse = "test@test.com";
+        log.info("사용가능한 아이디입니다." + userDAO.checkEmail(emailTrue));
+        log.info("존재하는 아이디입니다." + userDAO.checkEmail(emailFalse));
+    }
+    // 이름 중복 확인
+    @Test
+    public void checkNameTest(){
+        String nameTrue = "noName";
+        String nameFalse = "tester3";
+        log.info("사용가능한 이름입니다." + userDAO.checkName(nameTrue));
+        log.info("존재하는 이름입니다." + userDAO.checkName(nameFalse));
+    }
+
+    // 비밀번호 조회(로그인)
+    @Test
+    public void loginTest(){
+        String email = "test@test.com";
+        log.info("조회한 비밀번호 : " + userDAO.login(email).getPw());
+    }
 
     // 회원 1명 조회
     @Test

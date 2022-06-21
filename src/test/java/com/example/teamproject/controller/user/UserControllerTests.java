@@ -26,10 +26,18 @@ public class UserControllerTests {
     @Test
     public void registerTest() throws Exception{
         log.info("추가된 회원번호 : " + mockMvc.perform(MockMvcRequestBuilders.post("/user/join")
-            .param("name", "tester3")
-            .param("email", "tester3@test.com")
+            .param("name", "tester4")
+            .param("email", "tester4@test.com")
             .param("pw", "test00")
             .param("cover", "test입니다.")
         ).andReturn().getFlashMap());
+    }
+
+    @Test
+    public void loginTest() throws Exception{
+        log.info(mockMvc.perform(MockMvcRequestBuilders.post("/user/login")
+                .param("email", "tester3@test.com")
+                .param("pw", "test00")
+        ).andReturn().getModelAndView().getModelMap().toString());
     }
 }

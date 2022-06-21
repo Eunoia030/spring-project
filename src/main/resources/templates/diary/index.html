@@ -1,32 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>여행 다이어리</title>
 
-    <link type="text/css" rel="stylesheet" href="../../static/assets/css/common_diary.css" />
-    <link type="text/css" rel="stylesheet" href="../../static/assets/css/list.css" />
-    <link type="text/css" rel="stylesheet" href="../../static/assets/css/t1.css" />
-    <link type="text/css" rel="stylesheet" href="../../static/bootstrap-5.1.3-dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/css/common_diary.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/css/list.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/css/t1.css" />
+    <link type="text/css" rel="stylesheet" href="/bootstrap-5.1.3-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/header.css" />
+    <link rel="stylesheet" href="/assets/css/footer.css" />
  
 </head>
-<body>
-    <body id="st-body" class="homepage fullsize">	
+    <body>
+    <header>
+        <div class="header_container">
+            <div class="menubar">
+                <a>
+                    <img src="/images/134216_menu_lines_hamburger_icon.png">
+                </a>
+            </div>
+            <div class="logo">
+                <img src="/images/logo.png">
+            </div>
+            <div class="selectbar">
+                <form action="">
+                    <img src="/images/4801315_glass_magnifier_magnifying_search_searching_icon.png" >
+                    <input type="text" placeholder="검색어 입력">
+                </form>
+            </div>
+            <div class="mypage">
+                <ul>
+                    <li class="login">
+                        <a>
+                            <img src="/images/4092564_profile_about_mobile ui_user_icon.png">
+                            <span>Hej! 로그인 또는 가입하기</span>
+                        </a>
+                    </li>
+                    <li class="message"><a><img src="/images/622401_mail_packet_email_envelope_letter_icon.png"></a></li>
+                    <li class="heart"><a><img src="/images/216236_heart_icon.png"></a></li>
+                    <li class="cart"><a><img src="/images/6351908_bag_basket_cart_ecommerce_shop_icon.png"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="menubtn">
+            <a href="">여행자 기념품 </a>
+            <a href="">여행 다이어리</a>
+            <a href="">기념품 요청</a>
+        </div>
+    </header>
+    <div id="st-body" class="homepage fullsize">
+
+
+
         <div id="wrapper">
             
         
         <div id="main" role="main">
             <div id="main-content-header">
                 <style>
-#wrapper { 
+#wrapper {
 background-position: center;
 background-repeat: no-repeat;
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
-background-size: cover;	
+background-size: cover;
 background-image: url('http://linkandleave.com/files/2017/02/23/6e006508201242416d4d62cc6e260ac3143147.jpg'); 
 }
 #main-content-header {min-height: 210px}
@@ -70,7 +111,7 @@ background-image: url('http://linkandleave.com/files/2017/02/23/6e00650820124241
         <a href="" class="btn btn-outline-dark" style="margin-bottom: 14px;"> 다이어리 작성하기</a>
     </div>
     <div class="row row-tiny">
-                
+
                                 <div class="col-md-4 col-sm-4 col-xs-6 col-xs-v12 col-tiny">
             <div class="thumbnail">
                                     <div class="image" style="background-image:url('https://cdn.pixabay.com/photo/2019/10/13/16/20/nice-4546506_960_720.jpg');" onclick="location.href='#';">
@@ -85,8 +126,8 @@ background-image: url('http://linkandleave.com/files/2017/02/23/6e00650820124241
                 <div class="desc">
                     좋은 추억이 무조건 여행을 가면서 드디어 꿈에 그리던 남프랑스로 6박8일 여행을 다녀왔습니다...					</div>
                 <div class="info text-right">
-                    <i class="user_icon"></i>안xx님&nbsp;&nbsp;&nbsp;<i></i> 2022.05.20				</div>						
-                                    
+                    <i class="user_icon"></i>안xx님&nbsp;&nbsp;&nbsp;<i></i> 2022.05.20				</div>
+
             </div>
         </div>
                                 <div class="col-md-4 col-sm-4 col-xs-6 col-xs-v12 col-tiny">
@@ -103,8 +144,8 @@ background-image: url('http://linkandleave.com/files/2017/02/23/6e00650820124241
                 <div class="desc">
                    지난 10월에 오스트리아 여행을 다녀왔습니다. 곧 해외여행을 간다는 기대감에 설렘이 가득했습니다. 코로나 때문에 해외여행을 할 수 있을까 했었는데 ...					</div>
                 <div class="info text-right">
-                    <i class="user_icon"></i>이ㅇㅇ님&nbsp;&nbsp;&nbsp;<i class=""></i> 2021.10.24					</div>						
-                                    
+                    <i class="user_icon"></i>이ㅇㅇ님&nbsp;&nbsp;&nbsp;<i class=""></i> 2021.10.24					</div>
+
             </div>
         </div>
                                 <div class="col-md-4 col-sm-4 col-xs-6 col-xs-v12 col-tiny">
@@ -121,8 +162,8 @@ background-image: url('http://linkandleave.com/files/2017/02/23/6e00650820124241
                 <div class="desc">
                     1년 8개월 만에 떠나는 여행에 출발이 확정된 순간부터 저는 잠을 설칠 만큼 많은 기대감과 그에 못지않게 걱정도 됐습니다 ㅠㅠ...					</div>
                 <div class="info text-right">
-                    <i class="user_icon"></i>harry님&nbsp;&nbsp;&nbsp;<i class=""></i> 2021.10.22					</div>						
-                                    
+                    <i class="user_icon"></i>harry님&nbsp;&nbsp;&nbsp;<i class=""></i> 2021.10.22					</div>
+
             </div>
         </div>
                                 <div class="col-md-4 col-sm-4 col-xs-6 col-xs-v12 col-tiny">
@@ -139,8 +180,8 @@ background-image: url('http://linkandleave.com/files/2017/02/23/6e00650820124241
                 <div class="desc">
                     &nbsp;‘모아겐’ 오스트리아의 아침 인사를 컨시어즈님이 가장 먼저 알려주신다.&nbsp;현지인을 만날 때마다 건네면 “모아겐”하고 되돌아온다. 한 번은 ‘오하...					</div>
                 <div class="info text-right">
-                    <i class="user_icon"></i>임시님&nbsp;&nbsp;&nbsp;<i class=""></i> 2021.11.16					</div>						
-                                    
+                    <i class="user_icon"></i>임시님&nbsp;&nbsp;&nbsp;<i class=""></i> 2021.11.16					</div>
+
             </div>
         </div>
                                 <div class="col-md-4 col-sm-4 col-xs-6 col-xs-v12 col-tiny">
@@ -157,8 +198,8 @@ background-image: url('http://linkandleave.com/files/2017/02/23/6e00650820124241
                 <div class="desc">
                     이번 오스트리아 여행에 다녀온 부부입니다. 젊었을때 여행사 여행을 꽤나 다녔었지만 매번 빡빡한 일정으로 여행 후 즐거움보다는 피곤함이 밀려왔던것 같습니다. 개인여...					</div>
                 <div class="info text-right">
-                    <i class="user_icon"></i>임시님&nbsp;&nbsp;&nbsp;<i class=""></i> 2021.11.11					</div>						
-                                    
+                    <i class="user_icon"></i>임시님&nbsp;&nbsp;&nbsp;<i class=""></i> 2021.11.11					</div>
+
             </div>
         </div>
                                 <div class="col-md-4 col-sm-4 col-xs-6 col-xs-v12 col-tiny">
@@ -175,8 +216,8 @@ background-image: url('http://linkandleave.com/files/2017/02/23/6e00650820124241
                 <div class="desc">
                     이번 오스트리아 여행에 다녀온 부부입니다. 젊었을때 여행사 여행을 꽤나 다녔었지만 매번 빡빡한 일정으로 여행 후 즐거움보다는 피곤함이 밀려왔던것 같습니다. 개인여...						</div>
                 <div class="info text-right">
-                    <i class="user_icon"></i>임시님&nbsp;&nbsp;&nbsp;<i class=""></i> 2021.07.11					</div>						
-                                    
+                    <i class="user_icon"></i>임시님&nbsp;&nbsp;&nbsp;<i class=""></i> 2021.07.11					</div>
+
             </div>
         </div>
                                 <div class="col-md-4 col-sm-4 col-xs-6 col-xs-v12 col-tiny">
@@ -193,8 +234,8 @@ background-image: url('http://linkandleave.com/files/2017/02/23/6e00650820124241
                 <div class="desc">
                     이번 오스트리아 여행에 다녀온 부부입니다. 젊었을때 여행사 여행을 꽤나 다녔었지만 매번 빡빡한 일정으로 여행 후 즐거움보다는 피곤함이 밀려왔던것 같습니다. 개인여...					</div>
                 <div class="info text-right">
-                    <i class="user_icon"></i>임시님&nbsp;&nbsp;&nbsp;<i class=""></i> 2021.07.01					</div>						
-                                    
+                    <i class="user_icon"></i>임시님&nbsp;&nbsp;&nbsp;<i class=""></i> 2021.07.01					</div>
+
             </div>
         </div>
                                 <div class="col-md-4 col-sm-4 col-xs-6 col-xs-v12 col-tiny">
@@ -211,8 +252,8 @@ background-image: url('http://linkandleave.com/files/2017/02/23/6e00650820124241
                 <div class="desc">
                     &nbsp; 이번 오스트리아 여행에 다녀온 부부입니다. 젊었을때 여행사 여행을 꽤나 다녔었지만 매번 빡빡한 일정으로 여행 후 즐거움보다는 피곤함이 밀려왔던것 같습니다. 개인여...					</div>
                 <div class="info text-right">
-                    <i class="user_icon"></i>임시님&nbsp;&nbsp;&nbsp;<i class=""></i> 2020.03.16					</div>						
-                                    
+                    <i class="user_icon"></i>임시님&nbsp;&nbsp;&nbsp;<i class=""></i> 2020.03.16					</div>
+
             </div>
         </div>
                                 <div class="col-md-4 col-sm-4 col-xs-6 col-xs-v12 col-tiny">
@@ -229,8 +270,8 @@ background-image: url('http://linkandleave.com/files/2017/02/23/6e00650820124241
                 <div class="desc">
                     이번 오스트리아 여행에 다녀온 부부입니다. 젊었을때 여행사 여행을 꽤나 다녔었지만 매번 빡빡한 일정으로 여행 후 즐거움보다는 피곤함이 밀려왔던것 같습니다. 개인여...					</div>
                 <div class="info text-right">
-                    <i class="user_icon"></i>임시님&nbsp;&nbsp;&nbsp;<i class=""></i> 2020.03.12					</div>						
-                                    
+                    <i class="user_icon"></i>임시님&nbsp;&nbsp;&nbsp;<i class=""></i> 2020.03.12					</div>
+
             </div>
         </div>
                                 <div class="col-md-4 col-sm-4 col-xs-6 col-xs-v12 col-tiny">
@@ -247,8 +288,8 @@ background-image: url('http://linkandleave.com/files/2017/02/23/6e00650820124241
                 <div class="desc">
                     이번 오스트리아 여행에 다녀온 부부입니다. 젊었을때 여행사 여행을 꽤나 다녔었지만 매번 빡빡한 일정으로 여행 후 즐거움보다는 피곤함이 밀려왔던것 같습니다. 개인여...					</div>
                 <div class="info text-right">
-                    <i class="user_icon"></i>임시님&nbsp;&nbsp;&nbsp;<i class=""></i> 2020.03.12					</div>						
-                                    
+                    <i class="user_icon"></i>임시님&nbsp;&nbsp;&nbsp;<i class=""></i> 2020.03.12					</div>
+
             </div>
         </div>
                                 <div class="col-md-4 col-sm-4 col-xs-6 col-xs-v12 col-tiny">
@@ -265,8 +306,8 @@ background-image: url('http://linkandleave.com/files/2017/02/23/6e00650820124241
                 <div class="desc">
                     이번 오스트리아 여행에 다녀온 부부입니다. 젊었을때 여행사 여행을 꽤나 다녔었지만 매번 빡빡한 일정으로 여행 후 즐거움보다는 피곤함이 밀려왔던것 같습니다. 개인여...					</div>
                 <div class="info text-right">
-                    <i class="user_icon"></i>임시님&nbsp;&nbsp;&nbsp;<i class=""></i> 2020.02.28					</div>						
-                                    
+                    <i class="user_icon"></i>임시님&nbsp;&nbsp;&nbsp;<i class=""></i> 2020.02.28					</div>
+
             </div>
         </div>
                                 <div class="col-md-4 col-sm-4 col-xs-6 col-xs-v12 col-tiny">
@@ -283,13 +324,70 @@ background-image: url('http://linkandleave.com/files/2017/02/23/6e00650820124241
                 <div class="desc">
                     이번 오스트리아 여행에 다녀온 부부입니다. 젊었을때 여행사 여행을 꽤나 다녔었지만 매번 빡빡한 일정으로 여행 후 즐거움보다는 피곤함이 밀려왔던것 같습니다. 개인여...					</div>
                 <div class="info text-right">
-                    <i class="user_icon"></i>임시님&nbsp;&nbsp;&nbsp;<i class=""></i> 2020.02.26					</div>						
-                                    
+                    <i class="user_icon"></i>임시님&nbsp;&nbsp;&nbsp;<i class=""></i> 2020.02.26					</div>
+
             </div>
         </div>
-                    
+
                 </div>
 </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
-</body>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer_container">
+            <div class="footer_wrap">
+                <div class="footer_copyright">
+                    <p>© 2022 Company, Inc. All rights reserved.</p>
+                </div>
+
+                <div class="footer_use">
+                    <ul class="">
+                        <li class=""><a class=""></a>개인정보처리방침</li>
+                        <li class=""><a href=""></a>쿠키 정책</li>
+                        <li class=""><a href=""></a>쿠키 설정</li>
+                        <li class=""><a href=""></a>웹사이트 이용약관</li>
+                        <li class=""><a href=""></a>Responsible disclosure</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="team">
+                <p > captin corin </p>
+                <p> 고혁배 김지나 나기업 김정관 안요셉 이진성 강승훈</p>
+            </div>
+            <div class="footer_icons">
+                <ul>
+                    <li>
+                        <a href="">
+                            <img src="/images/5279111_network_fb_social media_facebook_facebook logo_icon.png" >
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="/images/1161953_instagram_icon.png" >
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="/images/211929_social_youtube_icon.png" >
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="/images/8679415_kakao_talk_fill_icon.png" >
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    </body>
 </html>
+
+
+
