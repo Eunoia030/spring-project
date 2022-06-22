@@ -1,3 +1,4 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{/main/main}">
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -13,9 +14,11 @@
     <script type="text/javascript" src="./lib/slick/slick.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./lib/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="./lib/slick/slick-theme.css" />
-    <link rel="stylesheet" href="/assets/css/request_write.css">
-    <link rel="stylesheet" href="/assets/css/header.css" />
-    <link rel="stylesheet" href="/assets/css/footer.css" />
+    <link rel="stylesheet" href="../../static/assets/css/request_write.css">
+    <!--  header,footer  -->
+    <link rel="stylesheet" href="../../static/assets/css/header.css" />
+    <link rel="stylesheet" type="text/css" href="../../static/assets/css/request_detail.css">
+    <link rel="stylesheet" href="../../static/assets/css/footer.css" />
 
     
 </head>
@@ -26,15 +29,15 @@
     <div class="header_container">
         <div class="menubar">
             <a>
-                <img src="/images/134216_menu_lines_hamburger_icon.png">
+                <img src="../../static/images/134216_menu_lines_hamburger_icon.png">
             </a>
         </div>
         <div class="logo">
-            <img src="/images/logo.png">
+            <img src="../../static/images/logo.png">
         </div>
         <div class="selectbar">
             <form action="">
-                <img src="/images/4801315_glass_magnifier_magnifying_search_searching_icon.png" >
+                <img src="../../static/images/4801315_glass_magnifier_magnifying_search_searching_icon.png" >
                 <input type="text" placeholder="검색어 입력">
             </form>
         </div>
@@ -42,13 +45,13 @@
             <ul>
                 <li class="login">
                     <a>
-                        <img src="/images/4092564_profile_about_mobile ui_user_icon.png">
+                        <img src="../../static/images/4092564_profile_about_mobile ui_user_icon.png">
                         <span>Hej! 로그인 또는 가입하기</span>
                     </a>
                 </li>
-                <li class="message"><a><img src="/images/622401_mail_packet_email_envelope_letter_icon.png"></a></li>
-                <li class="heart"><a><img src="/images/216236_heart_icon.png"></a></li>
-                <li class="cart"><a><img src="/images/6351908_bag_basket_cart_ecommerce_shop_icon.png"></a></li>
+                <li class="message"><a><img src="../../static/images/622401_mail_packet_email_envelope_letter_icon.png"></a></li>
+                <li class="heart"><a><img src="../../static/images/216236_heart_icon.png"></a></li>
+                <li class="cart"><a><img src="../../static/images/6351908_bag_basket_cart_ecommerce_shop_icon.png"></a></li>
             </ul>
         </div>
     </div>
@@ -61,6 +64,7 @@
 
 <article class="write-request" style="background-color:#F7F7F7">
     <div class="request_select_box select-type">
+        <form action="/request/request_write" method="post" id="write-request-form" enctype="multipart/form-data">
         <table class="request_select_box">
             <tbody class="request_select_box">
             <tr class="request_select_box">
@@ -70,102 +74,64 @@
                 </td>
             </tr>
             <tr class="request_select_box">
+                <th class="request_select_box">예상 가격 </th>
+                <td class="request_select_box">
+                    <input type="text" style="width:425px" name="partnerName" placeholder="" class="request_select_box">
+                </td>
+            </tr>
+            <tr class="request_select_box">
                 <th class="request_select_box">국가 선택</th>
                 <td class="request_select_box">
                     <p style="width:205px;margin-right:15px" class="request_select_filter select-box   ">
-                        <select name="continent" class="request_select_filter">
-                            <option selected="" value="" hidden="" class="request_select_filter">대륙명</option>
-                            <option value="동북아시아" class="request_select_filter">동북아시아
-                            </option>
-                            <option value="동남아시아" class="request_select_filter">동남아시아
-                            </option>
-                            <option value="중앙아시아" class="request_select_filter">중앙아시아
-                            </option>
-                            <option value="서아시아" class="request_select_filter">서아시아
-                            </option>
-                            <option value="동유럽" class="request_select_filter">동유럽
-                            </option>
-                            <option value="서유럽" class="request_select_filter">서유럽
-                            </option>
-                            <option value="남유럽" class="request_select_filter">남유럽
-                            </option>
-                            <option value="북유럽" class="request_select_filter">북유럽
-                            </option>
-                            <option value="북아메리카" class="request_select_filter">북아메리카
-                            </option>
-                            <option value="남아메리카" class="request_select_filter">남아메리카
-                            </option>
-                            <option value="북아프리카" class="request_select_filter">북아프리카
-                            </option>
-                            <option value="남아프리카" class="request_select_filter">남아프리카
-                            </option>
-                            <option value="오스트레일리아" class="request_select_filter">오스트레일리아
-                            </option>
+                    <div class="bar">
+                        <select onchange="categoryChange(this)">
+                            <option>대륙</option>
+                            <option value="아시아">아시아</option>
+                            <option value="유럽">유럽</option>
+                            <option value="아프리카">아프리카</option>
+                            <option value="남아메리카">남아메리카</option>
+                            <option value="북아메리카">북아메리카</option>
+                            <option value="오스트레일리아">오스트레일리아</option>
                         </select>
-                    </p>
-                    <p style="width:205px" class="request_select_filter select-box  disabled ">
-                        <select name="area" class="request_select_filter">
-                            <option selected="" value="" hidden="" class="request_select_filter">나라이름</option>
+
+                        <select id="good">
+                            <option>나라</option>
                         </select>
+                    </div>
                     </p>
                 </td>
             </tr>
             </tbody>
         </table>
+
     </div>
-    <div class="request_write_btn articles">
-        <div class=" article">
-            <div class="request_write_content article-wrap">
-                <div class="request_write_content image-wrap">
-                    <div class="request_write_content no-image">
 
-                    </div>
-                </div>
-                <div class="request_img_content article__content">
-                    <div class="request_img_content">
-                        <p class="request_img_content info-text">사진에 대한 이야기를 작성해주세요</p>
-                    </div>
-                </div>
-            </div>
-            <div class="request_keyword keyword">
-                <p class="request_keyword keyword-title disabled">커뮤니티 키워드</p>
-                <ul class="request_keyword selected-keyword-list">
-                    <li class="request_keyword">
-                        <p class="request_keyword tag-input-wrap">
-                            <span class="request_keyword tag-icon disabled">#</span>
-                            <input type="text" disabled="" placeholder="키워드를 입력하세요." maxlength="15" class="request_keyword tag-input" value="">
-                        </p>
-                    </li>
-
-                </ul>
-            </div>
-            <div class="request_write_content close-button-wrap">
-                <span class="request_write_content icon-ic_action_close disabled"></span>
-            </div>
+    <div class="request-content">
+        <textarea name="boardContent" rows="10" placeholder="찾고 싶으신 기념품에 대해 작성해주세요!" style="padding: 0px; margin: 0px; height: 229px; width: 100%;"></textarea>
+    </div>
+    </div>
+    <div class="field">
+        <input type="file" name="uploadFiles" multiple>
+    </div>
+    <div class="field">
+        <div class="uploadResult">
+            <ul></ul>
         </div>
-        <div class="img_upload image-add">
-            <label for="file-seq-3" class="img_upload first-upload__button">
-                <div class="img_upload">
-                    <div class="img_upload">
-                                <span src="/src/main/resources/static/images/plus.png" class="img_upload add-icon icon-ic_plus ">
-
-                                </span>
-                        <p class="img_upload add-info">어떤 것이 필요한가요?
-                            <br class="img_upload">사진을 등록하고 요청해보세요^^
-                        </p>
-                    </div>
-                </div>
-            </label>
-            <div style="display:none" class="img_upload">
-                <input type="file" name="files" id="file-seq-0" accept="image/*" multiple="" class="img_upload">
-                <input type="file" name="files" id="file-seq-1" accept="image/*" multiple="" class="img_upload">
-                <input type="file" name="files" id="file-seq-2" accept="image/*" multiple="" class="img_upload">
-                <input type="file" name="files" id="file-seq-3" accept="image/*" multiple="" class="img_upload">
-            </div>
-        </div>
-        <button class="request_write_btn story-save-btn">게시하기</button>
+    </div>
+    <div class="bigPictureWrapper">
+        <div class="bigPicture"></div>
+    </div>
+    <ul class="actions special">
+        <li><input type="submit" class="button" value="게시하기" /></li>
+    </ul>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
     </div>
 </article>
+
 
 
 <footer>
@@ -193,22 +159,22 @@
             <ul>
                 <li>
                     <a href="">
-                        <img src="/images/5279111_network_fb_social media_facebook_facebook logo_icon.png" >
+                        <img src="../../static/images/5279111_network_fb_social media_facebook_facebook logo_icon.png" >
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img src="/images/1161953_instagram_icon.png" >
+                        <img src="../../static/images/1161953_instagram_icon.png" >
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img src="/images/211929_social_youtube_icon.png" >
+                        <img src="../../static/images/211929_social_youtube_icon.png" >
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img src="/images/8679415_kakao_talk_fill_icon.png" >
+                        <img src="../../static/images/8679415_kakao_talk_fill_icon.png" >
                     </a>
                 </li>
             </ul>
@@ -223,4 +189,215 @@
 
 
 </body>
+
+<!-- Scripts -->
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/jquery.dropotron.min.js"></script>
+<script src="/assets/js/browser.min.js"></script>
+<script src="/assets/js/breakpoints.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<script src="/assets/js/main.js"></script>
+<script>
+    let regex = new RegExp("(.*?)\.(exe|sh|zip|alz)");
+    const $uploadResult = $(".uploadResult ul");
+
+    // 이미지 원본이 있는 지 검사
+    let check = false;
+    // 애니메이션이 진행중인 지 검사
+    let progress = false;
+    // 이전에 클릭한 이미지 경로 저장
+    let temp = "";
+
+    function showImage(filePath){
+
+        // 만약 temp에 무언가가 들어가 있다면(undefined가 아니라면)
+        if(temp){
+            //현재 클릭한 썸네일의 경로와 이전에 클릭했던 썸네일의 경로를 비교한다.
+            if(filePath == temp){
+                //만약 이전에 눌렀던 썸네일과 동일하다면 애니메이션을 막아준다.
+                //똑같은 거 또 누르지 않게 막아주기
+                return;
+            }
+        }
+
+        // 애니메이션이 진행중일 경우 true
+        if(progress) { return; }
+        // 만약 애니메이션 진행중이 아닐 때에는
+        // 썸네일을 클릭했기 때문에 progress를 true로 변경시켜준다.
+        progress = true;
+
+        //정상적으로 해당 썸네일의 원본이 보이게 된다면,
+        //클릭한 썸네일의 경로를 temp에 담아준다.
+        temp = filePath;
+
+        let time = 0;
+
+        if(check){ //만약 check가 true라면 원본 이미지가 이미 보여지고 있는 상태
+
+            //이미 있는 원본 이미지를 없애준다.
+            $(".bigPicture").animate({width:"0%", height:"0%"}, 1000);
+            setTimeout(function(){
+                $(".bigPictureWrapper").hide();
+                // 애니메이션이 다 끝났을 때
+                progress = false;
+            },950);
+
+            //이미 있는 원본 이미지가 없어지는 데에 걸리는 시간을 time에 담아놓는다.
+            time = 1000;
+        }
+        setTimeout(function(){
+            $(".bigPictureWrapper").css("display", "flex").show();
+            $(".bigPicture").html("<img src='/upload/display?fileName=" + filePath + "'>")
+                .animate({width:"100%", height:"100%"}, 1000);
+            // 이미지 원본이 보이고 있음.
+            check = true;
+
+            setTimeout(function(){
+                // 애니메이션이 다 끝났을 때
+                progress = false;
+            }, 1000);
+
+            //    만약 원본 이미지가 있었다면 time에는 1000이 들어가서 없어지는 동안 기다리게 되고
+            //    원본 이미지가 없었다면 time에는 초기값인 0이 들어가서 클릭한 썸네일의 원본이 바로 보이게 된다.
+        }, time);
+    }
+
+    $(".bigPictureWrapper").on("click", function(){
+        temp = "";
+        // 원본 이미지 클릭 시 사라지는 이벤트 진행중
+        progress = true;
+        $(".bigPicture").animate({width:"0%", height:"0%"}, 1000);
+
+        setTimeout(function(){
+            $(".bigPictureWrapper").hide();
+            //이미지 원본 안보임
+            check = false;
+            //애니메이션이 다 끝났을 때
+            progress = false;
+        },1000);
+    })
+
+    $("input[type='submit']").on("click", function(e){
+        e.preventDefault();
+        let $form = $("form#registerForm");
+        let str = "";
+
+        $.each($(".uploadResult ul li"), function(i, li){
+            str += "<input type='hidden' name='fileList[" + i + "].fileName' value='" + $(li).data("filename") + "'>"
+            str += "<input type='hidden' name='fileList[" + i + "].uuid' value='" + $(li).data("uuid") + "'>"
+            str += "<input type='hidden' name='fileList[" + i + "].uploadPath' value='" + $(li).data("uploadpath") + "'>"
+            str += "<input type='hidden' name='fileList[" + i + "].image' value='" + $(li).data("image") + "'>"
+            str += "<input type='hidden' name='fileList[" + i + "].fileSize' value='" + $(li).data("filesize") + "'>"
+        });
+
+        $form.append(str).submit();
+
+    });
+
+    function checkExtension(fileName, fileSize){
+        if(regex.test(fileName)){
+            alert("업로드 할 수 없는 파일의 형식입니다.");
+            return false;
+        }
+        if(fileSize >= 5242880){
+            alert("파일 사이즈 초과");
+            return false;
+        }
+        return true;
+    }
+
+    function showUploadResult(files){
+        let str ="";
+        $(files).each(function(i, file){
+            str += "<li data-filesize='" + file.fileSize + "' data-filename='" + file.fileName + "' data-uuid='" + file.uuid + "' data-uploadpath='" + file.uploadPath + "' data-image='" + file.image + "'>";
+            if(file.image){
+                str += "<a href=\"javascript:showImage(\'" + file.uploadPath + "/" + file.uuid + "_" + file.fileName +"\');\"><img src='/upload/display?fileName=" + file.uploadPath + "/s_" + file.uuid + "_"  + file.fileName + "'></a>";
+            }else{
+                str += "<a href='/upload/download?fileName=" + file.uploadPath + "/" + file.uuid + "_" + file.fileName + "'><img src='/images/attach.png' width='100'></a>";
+            }
+            str += "<span data-file='" + file.uploadPath + "/s_" + file.uuid + "_" + file.fileName + "' style='cursor: pointer;'>x</span>"
+            str += "<p>" + file.fileName + "</p>"
+            str += "</li>"
+        });
+        $uploadResult.append(str);
+    }
+    let arFile = Array.from($("input[type='file']")[0].files);
+
+    $("input[type='file']").on("change", function(e){
+        let formData =   new FormData();
+        let inputFile = $("input[name='uploadFiles']");
+        let files = inputFile[0].files;
+        console.log(files);
+        for(let i=0; i<files.length; i++){
+            if(!checkExtension(files[i].name, files[i].size)){ return; }
+            formData.append("uploadFiles", files[i]);
+        }
+        Array.from($(this)[0].files).forEach(file => arFile.push(file));
+        const dataTransfer = new DataTransfer();
+        arFile.forEach(file => dataTransfer.items.add(file));
+        $(this)[0].files = dataTransfer.files;
+
+        $.ajax({
+            url: "/upload/upload",
+            type: "post",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(files){
+                showUploadResult(files);
+            }
+        });
+    });
+
+    $(".uploadResult").on("click", "span", function(){
+        let $target = $(this).data("file");
+        let $li = $(this).closest("li");
+
+        $.ajax({
+            url: "/upload/delete",
+            type: "post",
+            data: {fileName: $target},
+            success: function(){
+                $li.remove();
+                let temp = $target.substring($target.indexOf("_") + 1);
+                temp = temp.substring(temp.indexOf("_") + 1);
+                const dataTransfer = new DataTransfer();
+                for(let i=0; i<arFile.length; i++){
+                    if(arFile[i].name == temp){
+                        arFile.splice(i, 1);
+                    }
+                }
+                arFile.forEach(file => dataTransfer.items.add(file));
+                $("input[name='uploadFiles']")[0].files = dataTransfer.files;
+            }
+        });
+    });
+</script>
+<script>
+    function categoryChange(e) {
+        var good_a = ["일본", "중국", "몽골", "러시아"];
+        var good_b = ["영국", "프랑스", "폴란드", "터키", "이탈리아","스페인"];
+        var good_c = ["모로코", "마다가스카르", "콩고"];
+        var good_d = ["아르헨티나","칠레", "에콰도르", "베네수엘라"];
+        var good_e = ["캐나다", "미국", "그린란드", "멕시코", "쿠바"];
+        var good_f = ["호주"];
+        var target = document.getElementById("good");
+
+        if(e.value == "아시아") var d = good_a;
+        else if(e.value == "유럽") var d = good_b;
+        else if(e.value == "아프리카") var d = good_c;
+        else if(e.value == "남아메리카") var d = good_d;
+        else if(e.value == "북아메리카") var d = good_e;
+        else if(e.value == "오스트레일리아") var d = good_f;
+
+        target.options.length = 0;
+
+        for (x in d) {
+            var opt = document.createElement("option");
+            opt.value = d[x];
+            opt.innerHTML = d[x];
+            target.appendChild(opt);
+        }
+    }
+</script>
 </html>
