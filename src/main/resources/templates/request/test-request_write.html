@@ -1,6 +1,5 @@
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{/main/main}">
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{/main/main}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -63,133 +62,125 @@
 </header>
 
 <article class="write-request" style="background-color:#F7F7F7">
-    <div class="request_select_box select-type">
-        <form action="/request/request_write" method="post" id="write-request-form" enctype="multipart/form-data">
-        <table class="request_select_box">
-            <tbody class="request_select_box">
-            <tr class="request_select_box">
-                <th class="request_select_box">요청 제목</th>
-                <td class="request_select_box">
-                    <input type="text" style="width:425px" name="partnerName" placeholder="" class="request_select_box">
-                </td>
-            </tr>
-            <tr class="request_select_box">
-                <th class="request_select_box">예상 가격 </th>
-                <td class="request_select_box">
-                    <input type="text" style="width:425px" name="partnerName" placeholder="" class="request_select_box">
-                </td>
-            </tr>
-            <tr class="request_select_box">
-                <th class="request_select_box">국가 선택</th>
-                <td class="request_select_box">
-                    <p style="width:205px;margin-right:15px" class="request_select_filter select-box   ">
-                    <div class="bar">
-                        <select onchange="categoryChange(this)">
-                            <option>대륙</option>
-                            <option value="아시아">아시아</option>
-                            <option value="유럽">유럽</option>
-                            <option value="아프리카">아프리카</option>
-                            <option value="남아메리카">남아메리카</option>
-                            <option value="북아메리카">북아메리카</option>
-                            <option value="오스트레일리아">오스트레일리아</option>
-                        </select>
+    <!-- Table -->
+    <div class="content">
+        <div class="form">
+            <form method="post" action="/request/request_write" id="registerForm" enctype="multipart/form-data">
+                <div class="requset-box">
+                    <table class="request-box">
+                        <tbody class="request-box">
+                        <tr class="request-box">
+                            <th class="request-box">요청 제목</th>
+                            <td class = "request-box"></td>
+                              <input class="request-title" name="requestTitle" placeholder="Title" type="text" style="width:425px "/>
+                        </tr>
+                            <tr class="request-price">
+                                <th class="request-price">예상 가격</th>
+                                <td class = "request-price"></td>
+                                <input class="request-price" name="request-price" placeholder="price" type="text" style="width:425px "/>
+                            </tr>
+                        <tr class="request_select_box">
+                            <th class="request_select_box">국가 선택</th>
+                            <td class="request_select_box">
+                                <p style="width:205px;margin-right:15px" class="request_select_filter select-box   ">
+                                <div class="bar">
+                                    <select onchange="categoryChange(this)">
+                                        <option>대륙</option>
+                                        <option value="아시아">아시아</option>
+                                        <option value="유럽">유럽</option>
+                                        <option value="아프리카">아프리카</option>
+                                        <option value="남아메리카">남아메리카</option>
+                                        <option value="북아메리카">북아메리카</option>
+                                        <option value="오스트레일리아">오스트레일리아</option>
+                                    </select>
 
-                        <select id="good">
-                            <option>나라</option>
-                        </select>
+                                    <select id="good">
+                                        <option>나라</option>
+                                    </select>
+                                </div>
+                                </p>
+                            </td>
+                        </tr>
+                        </tbody>
+                        </table>
+
                     </div>
-                    </p>
-                </td>
-            </tr>
-            </tbody>
-        </table>
 
-    </div>
-
-    <div class="request-content">
-        <textarea name="boardContent" rows="10" placeholder="찾고 싶으신 기념품에 대해 작성해주세요!" style="resize:none"></textarea>
-    </div>
-    </div>
-    <div class="field">
-        <input type="file" name="uploadFiles" multiple>
-    </div>
-    <div class="field">
-        <div class="uploadResult">
-            <ul></ul>
+                    <div class="request-content">
+                        <textarea name="boardContent" rows="10" placeholder="찾고 싶으신 기념품에 대해 작성해주세요!" style="resize:none"></textarea>
+                    </div>
+                </div>
+                <div class="field">
+                    <h4></h4>
+                    <input type="file" name="uploadFiles" multiple>
+                </div>
+                <div class="field">
+                    <div class="uploadResult">
+                        <ul></ul>
+                    </div>
+                </div>
+                <div class="bigPictureWrapper">
+                    <div class="bigPicture"></div>
+                </div>
+                <ul class="actions special">
+                    <li><input type="submit" class="button" value="게시하기" /></li>
+                </ul>
+            </form>
         </div>
-    </div>
-    <div class="bigPictureWrapper">
-        <div class="bigPicture"></div>
-    </div>
-    <ul class="actions special">
-        <li><input type="submit" class="button" value="게시하기" /></li>
-    </ul>
-    </form>
-    </div>
     </div>
     </div>
     </div>
     </div>
 </article>
 
+    <footer>
+        <div class="footer_container">
+            <div class="footer_wrap">
+                <div class="footer_copyright">
+                    <p>© 2022 Company, Inc. All rights reserved.</p>
+                </div>
 
-
-<footer>
-    <div class="footer_container">
-        <div class="footer_wrap">
-            <div class="footer_copyright">
-                <p>© 2022 Company, Inc. All rights reserved.</p>
+                <div class="footer_use">
+                    <ul class="">
+                        <li class=""><a class=""></a>개인정보처리방침</li>
+                        <li class=""><a href=""></a>쿠키 정책</li>
+                        <li class=""><a href=""></a>쿠키 설정</li>
+                        <li class=""><a href=""></a>웹사이트 이용약관</li>
+                        <li class=""><a href=""></a>Responsible disclosure</li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="footer_use">
-                <ul class="">
-                    <li class=""><a class=""></a>개인정보처리방침</li>
-                    <li class=""><a href=""></a>쿠키 정책</li>
-                    <li class=""><a href=""></a>쿠키 설정</li>
-                    <li class=""><a href=""></a>웹사이트 이용약관</li>
-                    <li class=""><a href=""></a>Responsible disclosure</li>
+            <div class="team">
+                <p > captin corin </p>
+                <p> 고혁배 김지나 나기업 김정관 안요셉 이진성 강승훈</p>
+            </div>
+            <div class="footer_icons">
+                <ul>
+                    <li>
+                        <a href="">
+                            <img src="../../static/images/5279111_network_fb_social media_facebook_facebook logo_icon.png" >
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="../../static/images/1161953_instagram_icon.png" >
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="../../static/images/211929_social_youtube_icon.png" >
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="../../static/images/8679415_kakao_talk_fill_icon.png" >
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
-        <div class="team">
-            <p > captin corin </p>
-            <p> 고혁배 김지나 나기업 김정관 안요셉 이진성 강승훈</p>
-        </div>
-        <div class="footer_icons">
-            <ul>
-                <li>
-                    <a href="">
-                        <img src="../../static/images/5279111_network_fb_social media_facebook_facebook logo_icon.png" >
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="../../static/images/1161953_instagram_icon.png" >
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="../../static/images/211929_social_youtube_icon.png" >
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="../../static/images/8679415_kakao_talk_fill_icon.png" >
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</footer>
-
-
-
-
-
-
-
+    </footer>
 </body>
-
 <!-- Scripts -->
 <script src="/assets/js/jquery.min.js"></script>
 <script src="/assets/js/jquery.dropotron.min.js"></script>
@@ -400,4 +391,21 @@
         }
     }
 </script>
+<!-- header,footer -->
+<script src="../../static/assets/js/header.js"></script>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
