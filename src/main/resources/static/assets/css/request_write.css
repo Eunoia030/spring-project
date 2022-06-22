@@ -798,11 +798,7 @@ p {
     content: "\e905";
     position: absolute;
 }
-.select-box:before {
-    left: 5px;
-    top: 5px;
-    z-index: 5;
-}
+
 .select-box.disabled.request_select_filter select.request_select_filter {
     color: #c6c6c6;
 }
