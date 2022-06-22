@@ -1,10 +1,11 @@
 const joinService = (function () {
 
-    function checkDuplication(inputData, callback) {
+    function checkDuplication(inputData, code, callback) {
         $.ajax({
-            url: "/user/checkId",
+            url: `/user/${code}`,
             type: "post",
-            data: {inputData: inputData},
+            data: inputData,
+            contentType: "application/json",
             async: false,
             success: function(result){
                 if(callback){

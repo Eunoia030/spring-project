@@ -13,18 +13,6 @@ let spc = /[~!@#$%^&*()_+|<>?:{}]/;
 let pw = /^(?=.*[a-zA-Z])(?=.*[0-9]).{4,12}$/;
 let email =
   /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-// 중복 확인
-const checkDuplication = (target) => {
-  target.on("change", () => {
-    joinService.checkDuplication(target.val(), (result) => {
-      if (result) {
-        // 사용가능
-      } else {
-        // 중복
-      }
-    });
-  });
-};
 
 const checkEmail = () => {
   // null 여부 확인

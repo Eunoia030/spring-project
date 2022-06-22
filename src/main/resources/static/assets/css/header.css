@@ -132,7 +132,7 @@ a,
 .login > a > img {
   width: 24px;
   height: 24px;
-  margin-top: 12px;
+  margin-top: 10px;
   margin-left: 12px;
   
 }
@@ -206,4 +206,55 @@ a:visited{
   width: 200px;
   bottom: 8px;
   left: 40px;
+}
+
+/* 왼쪽 메뉴 */
+.slide_menu{
+    padding: 0 20px;
+}
+
+.slide_menu .menu_close, .slide_menu1 .menu_close1{
+    height: 52px;
+}
+
+.slide_menu .btn_menu_close {
+    margin-top: 25px;
+    width: 25px;
+    height: 25px;
+    background: none;
+    border: 0;
+    font-size: 15px;
+    color: #fff;
+    display: block;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.slide_menu1 .btn_menu_close1{
+    width: 40px;
+    height: 40px;
+    border: 0;
+    font-size: 15px;
+    color: #fff;
+    display: block;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 50px;
+    top: 25px;
+    background-color: #fff !important;
+}
+.slide_menu .btn_menu_close:hover, .slide_menu1 .btn_menu_close1:hover{
+    background-color: rgb(241, 236, 236);
+}
+
+.slide_menu .btn_menu_close img, .slide_menu1 .btn_menu_close1 img{
+    width: 15px;
+    height: 15px;
+    object-fit: cover;
+    margin: 0;
+    border-radius: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

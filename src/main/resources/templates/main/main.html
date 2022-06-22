@@ -54,7 +54,7 @@
                     <li class="login">
                         <a>
                             <img src="/images/4092564_profile_about_mobile%20ui_user_icon.png">
-                            <div class="btn_menu_open1" style="top:0.8rem; left:2rem;"><button type="button"><span style="padding: 14px;">Hej! 로그인 또는 가입하기</span></button></div>
+                            <div class="btn_menu_open1" style="top:0.6rem; left:2rem;"><button type="button"><span style="padding: 14px;">Hej! 로그인 또는 가입하기</span></button></div>
                         </a>
                         <div id="mask1"></div>
                         <div class ="slide_menu1">
@@ -93,10 +93,9 @@
                             <section class="body_side">
                                 <ul class="menu_list">
                                     <li><a th:href="@{/user/login}">로그인</a></li>
-                                    <li><a href="#">구매 내역</a></li>
-                                    <li><a href="#">위시리스트</a></li>
-                                    <li><a href="#">플래너</a></li>
-                                    <li><a href="#">배송 조회</a></li>
+                                    <li><a th:href="@{/board/list}">해외여행 다이어리 보러가기</a></li>
+                                    <li><a th:href="@{/product/list}">해외물품 구매하러가기</a></li>
+                                    <li><a th:href="@{/request/list}">해외물품 판매요청 보러가기</a></li>
                                 </ul>
                             </section>
                         </div>
@@ -108,9 +107,9 @@
             </div>
         </div>
         <div class="menubtn">
-            <a href="">모든 제품</a>
-            <a href="">온라인 쇼룸</a>
-            <a href="">더 낮은 새로운 가격</a>
+            <a th:href="@{/board/list}">해외여행 다이어리 보러가기</a>
+            <a th:href="@{/product/list}">해외물품 구매하러가기</a>
+            <a th:href="@{/request/list}">해외물품 판매요청 보러가기</a>
         </div>
     </header>
     <!--  header end  -->
@@ -124,7 +123,7 @@
                     <br> 작은 변화로 큰 행복을 누려보세요.</p>
             </div>
             <div class="diary_btn">
-                <a href="">다이어리 작성하기</a>
+                <a th:href="@{/board/register}">다이어리 작성하기</a>
             </div>
             </div>
 
@@ -133,16 +132,13 @@
                     <li>
                         <img src="/images/image7.PNG">
                     </li>
-
                     <li>
                         <img src="/images/image8.PNG">
                     </li>
-
                 </ul>
             </div>
         </div>
         </section>
-
         <section class="function_slide">
             <div class="function_int">
                 <h2>Koinonia 서비스</h2>
@@ -232,22 +228,20 @@
 
 
 
-
+        <!--    판매 상품 section start   -->
         <section class="goods_slide">
-
-
+            <!--     sample start      -->
             <div>
-                <a href="">
-                <div>
-                <img src="/images/goods1.PNG">
-                <div class="goods_name">
-                    <p>상품 이름</p>
-                </div>
-                </div>
+                <a th:href="@{/product/detail}">
+                    <div>
+                        <img src="/images/goods1.PNG">
+                        <div class="goods_name">
+                            <p>상품 이름</p>
+                        </div>
+                    </div>
                 </a>
             </div>
-
-
+            <!--     sample end      -->
 
             <div>
                 <a href="">
@@ -259,7 +253,6 @@
                 </div>
                 </a>
             </div>
-
             <div>
                 <a href="">
                 <div>
@@ -270,7 +263,6 @@
                 </div>
                 </a>
             </div>
-
             <div>
                 <a href="">
                 <div>
@@ -281,7 +273,6 @@
                 </div>
                 </a>
             </div>
-
             <div>
                 <a href="">
                 <div>
@@ -292,7 +283,6 @@
                 </div>
                 </a>
             </div>
-
             <div>
                 <a href="">
                 <div>
@@ -303,7 +293,6 @@
                 </div>
                 </a>
             </div>
-
             <div>
                 <a href="">
                 <div>
@@ -314,7 +303,6 @@
                 </div>
                 </a>
             </div>
-
             <div>
                 <a href="">
                 <div>
@@ -325,7 +313,6 @@
                 </div>
                 </a>
             </div>
-
             <div>
                 <a href="">
                 <div>
@@ -346,22 +333,24 @@
                 </div>
                 </a>
             </div>
-
         </section>
+        <!--    판매 상품 section end   -->
 
+        <!--    다이어리 section start   -->
         <div class="story_st">
-                <h2>여행 다이어리</h2>
-                <div class="diary_btn">
-                    <a href="">다이어리 더보기</a>
-                </div>
+            <h2>여행 다이어리</h2>
+            <div class="diary_btn">
+                <a th:href="@{/board/list}">다이어리 더보기</a>
             </div>
-
+        </div>
         <section class="story_slide">
-
-              <div class="story1">
-                  <img src="/images/diary1.PNG">                  >
-
-              </div>
+            <!--       sample start         -->
+            <div class="story1">
+                <a th:href="@{/board/detail}">
+                  <img src="/images/diary1.PNG">
+                </a>
+            </div>
+            <!--       sample end         -->
 
               <div class="story2">
                 <img src="/images/diary2.PNG">
@@ -370,23 +359,16 @@
               <div class="story3">
                 <img src="/images/diary3.PNG">
               </div>
-
-          </section>
-
-
+        </section>
+        <!--    다이어리 section start   -->
     </main>
-
-
-
-
-
+    <!--  footer start  -->
     <footer>
         <div class="footer_container">
         <div class="footer_wrap">
             <div class="footer_copyright">
                 <p>© 2022 Company, Inc. All rights reserved.</p>
             </div>
-
             <div class="footer_use">
                 <ul class="">
                 <li class=""><a class=""></a>개인정보처리방침</li>
@@ -427,51 +409,39 @@
         </div>
         </div>
     </footer>
-
-
-
-
-
+    <!--  footer end  -->
+</body>
 <script>
-        $(function (){
-            $('.service_slide').slick({
+    $(function (){
+        $('.service_slide').slick({
             infinite: true,
             slidesToShow: 3,
             slidesToScroll: 1,
             arrows: true,
             dots: true
-          });
-        })
+        });
+    })
 
-</script>
-
-<script>
     $(function (){
         $('.goods_slide').slick({
-        infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        arrows: true,
-        dots: true
-      });
+            infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            arrows: true,
+            dots: true
+        });
     })
 
-</script>
-
-<script>
     $(function (){
         $('.story_slide').slick({
-        infinite: true,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        arrows: true,
-        dots: true
-      });
+            infinite: true,
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            arrows: true,
+            dots: true
+        });
     })
-
 </script>
-
-</body>
 <!-- header,footer -->
 <script src="/assets/js/header.js"></script>
 </html>

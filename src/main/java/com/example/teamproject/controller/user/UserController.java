@@ -105,19 +105,27 @@ public class UserController {
     // 이메일 중복확인
     @PostMapping("/checkEmail")
     @ResponseBody
-    public int checkEmail(String email){
-        return 0;
+    public boolean checkEmail(@RequestBody String email){
+        log.info("*************");
+        log.info("받은 데이터 : " + email);
+        log.info("*************");
+        if(userService.checkEmail(email) <= 0){
+            return false;
+        }
+        return true;
     }
 
     // 이름 중복확인
-    @PostMapping("/checkId")
+    @PostMapping("/checkName")
     @ResponseBody
     public boolean checkName(@RequestBody String name){
-        log.info(name);
+        log.info("*************");
+        log.info("받은 데이터 : " + name);
+        log.info("*************");
         if(userService.checkName(name) <= 0){
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 
     // 이름 수정

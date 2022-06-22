@@ -28,18 +28,6 @@ let spc = /[~!@#$%^&*()_+|<>?:{}]/;
 let pw = /^(?=.*[a-zA-Z])(?=.*[0-9]).{4,12}$/;
 let email =
   /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-// 중복 확인
-const checkDuplication = (target) => {
-  target.on("change", () => {
-    joinService.checkDuplication(target.val(), (result) => {
-      if (result) {
-        // 사용가능
-      } else {
-        // 중복
-      }
-    });
-  });
-};
 
 const checkName = () => {
   // null 여부 확인
@@ -74,7 +62,7 @@ const checkName = () => {
     $("#nameGuidMsg").removeAttr("style");
   }
   // 중복 확인
-  joinService.checkDuplication($("#name").val(), (result) => {
+  joinService.checkDuplication($("#name").val(), "checkName",(result) => {
     if (result) {
       // 중복인 경우
       $("#name").attr("style", "border-color:#e00751;");
@@ -111,14 +99,18 @@ const checkEmail = () => {
     $("#emailGuidMsg").removeAttr("style");
   }
   // 중복 확인
-  // joinService.checkDuplication($("#email").val(), (result) => {
-  //   if (result) {
-  //     // 중복인 경우
-  //     $("#email").attr("style", "border-color:#e00751;");
-  //     $("#emailGuidMsg").text("중복된 이메일이 존재합니다.");
-  //     $("#emailGuidMsg").attr("style", "display:block;");
-  //   }
-  // });
+  console.log($("#email").val());
+  joinService.checkDuplication($("#email").val(), "checkEmail", (result) => {
+    if (result) {
+      // 중복인 경우
+      $("#email").attr("style", "border-color:#e00751;");
+      $("#emailGuidMsg").text("중복된 이메일이 존재합니다.");
+      $("#emailGuidMsg").attr("style", "display:block;");
+    }else {
+      $("#email").removeAttr("style");
+      $("#emailGuidMsg").removeAttr("style");
+    }
+  });
   return true;
 };
 const checkPw = () => {
