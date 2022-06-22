@@ -384,7 +384,33 @@
 	
 		});
 	</script>
+	<script>
+		function categoryChange(e) {
+			var good_a = ["일본", "중국", "몽골", "러시아"];
+			var good_b = ["영국", "프랑스", "폴란드", "터키", "이탈리아","스페인"];
+			var good_c = ["모로코", "마다가스카르", "콩고"];
+			var good_d = ["아르헨티나","칠레", "에콰도르", "베네수엘라"];
+			var good_e = ["캐나다", "미국", "그린란드", "멕시코", "쿠바"];
+			var good_f = ["호주"];
+			var target = document.getElementById("good");
 
+			if(e.value == "아시아") var d = good_a;
+			else if(e.value == "유럽") var d = good_b;
+			else if(e.value == "아프리카") var d = good_c;
+			else if(e.value == "남아메리카") var d = good_d;
+			else if(e.value == "북아메리카") var d = good_e;
+			else if(e.value == "오스트레일리아") var d = good_f;
+
+			target.options.length = 0;
+
+			for (x in d) {
+				var opt = document.createElement("option");
+				opt.value = d[x];
+				opt.innerHTML = d[x];
+				target.appendChild(opt);
+			}
+		}
+		</script>
 
 </body>
 </html>

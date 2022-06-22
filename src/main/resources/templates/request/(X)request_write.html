@@ -1,0 +1,314 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{/main/main}">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>요청 신청</title>
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/d1d8464fd3.js" 
+    crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script type="text/javascript" src="./lib/slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./lib/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="./lib/slick/slick-theme.css" />
+    <link rel="stylesheet" href="../../static/assets/css/request_write.css">
+    <!--  header,footer  -->
+    <link rel="stylesheet" href="../../static/assets/css/header.css" />
+    <link rel="stylesheet" type="text/css" href="../../static/assets/css/request_detail.css">
+    <link rel="stylesheet" href="../../static/assets/css/footer.css" />
+
+    
+</head>
+
+<body>
+<div class="topbar"></div>
+<header>
+    <div class="header_container">
+        <div class="menubar">
+            <a>
+                <img src="../../static/images/134216_menu_lines_hamburger_icon.png">
+            </a>
+        </div>
+        <div class="logo">
+            <img src="../../static/images/logo.png">
+        </div>
+        <div class="selectbar">
+            <form action="">
+                <img src="../../static/images/4801315_glass_magnifier_magnifying_search_searching_icon.png" >
+                <input type="text" placeholder="검색어 입력">
+            </form>
+        </div>
+        <div class="mypage">
+            <ul>
+                <li class="login">
+                    <a>
+                        <img src="../../static/images/4092564_profile_about_mobile ui_user_icon.png">
+                        <span>Hej! 로그인 또는 가입하기</span>
+                    </a>
+                </li>
+                <li class="message"><a><img src="../../static/images/622401_mail_packet_email_envelope_letter_icon.png"></a></li>
+                <li class="heart"><a><img src="../../static/images/216236_heart_icon.png"></a></li>
+                <li class="cart"><a><img src="../../static/images/6351908_bag_basket_cart_ecommerce_shop_icon.png"></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="menubtn">
+        <a href="">여행자 기념품 </a>
+        <a href="">여행 다이어리</a>
+        <a href="">기념품 요청</a>
+    </div>
+</header>
+
+<article class="write-request" style="background-color:#F7F7F7">
+    <div class="request_select_box select-type">
+        <form action="/request/request_write" method="post" id="write-request-form" enctype="multipart/form-data">
+        <table class="request_select_box">
+            <tbody class="request_select_box">
+            <tr class="request_select_box">
+                <th class="request_select_box">요청 제목</th>
+                <td class="request_select_box">
+                    <input type="text" style="width:425px" name="partnerName" placeholder="" class="request_select_box">
+                </td>
+            </tr>
+            <tr class="request_select_box">
+                <th class="request_select_box">국가 선택</th>
+                <td class="request_select_box">
+                    <p style="width:205px;margin-right:15px" class="request_select_filter select-box   ">
+                    <div class="bar">
+                        <select onchange="categoryChange(this)">
+                            <option>대륙</option>
+                            <option value="아시아">아시아</option>
+                            <option value="유럽">유럽</option>
+                            <option value="아프리카">아프리카</option>
+                            <option value="남아메리카">남아메리카</option>
+                            <option value="북아메리카">북아메리카</option>
+                            <option value="오스트레일리아">오스트레일리아</option>
+                        </select>
+
+                        <select id="good">
+                            <option>나라</option>
+                        </select>
+                    </div>
+                    </p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        </form>
+    </div>
+    <div class="request_write_btn articles">
+        <div class=" article">
+            <div class="request_write_content article-wrap">
+                <div class="request_write_content image-wrap">
+                    <div class="request_write_content no-image">
+
+                    </div>
+                </div>
+                <div class="request_img_content article__content">
+                    <div class="request_img_content">
+                        <p class="request_img_content info-text">사진에 대한 이야기를 작성해주세요</p>
+                    </div>
+                </div>
+            </div>
+            <div class="request_keyword keyword">
+                <p class="request_keyword keyword-title disabled">커뮤니티 키워드</p>
+                <ul class="request_keyword selected-keyword-list">
+                    <li class="request_keyword">
+                        <p class="request_keyword tag-input-wrap">
+                            <span class="request_keyword tag-icon disabled">#</span>
+                            <input type="text" disabled="" placeholder="키워드를 입력하세요." maxlength="15" class="request_keyword tag-input" value="">
+                        </p>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="request_write_content close-button-wrap">
+                <span class="request_write_content icon-ic_action_close disabled"></span>
+            </div>
+        </div>
+        <div class="img_upload image-add">
+            <label for="file-seq-3" class="img_upload first-upload__button">
+                <div class="img_upload">
+                    <div class="img_upload">
+                                <span src="../../static/images/plus.png" class="img_upload add-icon icon-ic_plus ">
+
+                                </span>
+                        <p class="img_upload add-info">어떤 것이 필요한가요?
+                            <br class="img_upload">사진을 등록하고 요청해보세요^^
+                        </p>
+                    </div>
+                </div>
+            </label>
+            <div style="display:none" class="img_upload">
+                <input type="file" name="files" id="file-seq-0" accept="image/*" multiple="" class="img_upload">
+            </div>
+        </div>
+    </div>
+
+    <ul class="actions special">
+      <li><button class="request_write_btn story-save-btn" type="submit">게시하기</button></li>
+    </ul>
+
+</article>
+
+
+
+<footer>
+    <div class="footer_container">
+        <div class="footer_wrap">
+            <div class="footer_copyright">
+                <p>© 2022 Company, Inc. All rights reserved.</p>
+            </div>
+
+            <div class="footer_use">
+                <ul class="">
+                    <li class=""><a class=""></a>개인정보처리방침</li>
+                    <li class=""><a href=""></a>쿠키 정책</li>
+                    <li class=""><a href=""></a>쿠키 설정</li>
+                    <li class=""><a href=""></a>웹사이트 이용약관</li>
+                    <li class=""><a href=""></a>Responsible disclosure</li>
+                </ul>
+            </div>
+        </div>
+        <div class="team">
+            <p > captin corin </p>
+            <p> 고혁배 김지나 나기업 김정관 안요셉 이진성 강승훈</p>
+        </div>
+        <div class="footer_icons">
+            <ul>
+                <li>
+                    <a href="">
+                        <img src="../../static/images/5279111_network_fb_social media_facebook_facebook logo_icon.png" >
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../../static/images/1161953_instagram_icon.png" >
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../../static/images/211929_social_youtube_icon.png" >
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../../static/images/8679415_kakao_talk_fill_icon.png" >
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+</body>
+<!-- header,footer -->
+<script src="../../static/assets/js/header.js"></script>
+<script>
+    let regex = new RegExp("(.*?)\.(exe|sh|zip|alz)");
+    let uploadResult = $(".uploadResult ul");
+
+    $("input[type='submit']").on("click", function (e) {
+    e.preventDefault();
+    let $form = $("form#write-request-form");
+    let str ="";
+
+    $.each($("uploadResult ul li"), function (i, li) {
+        str += "<input type='hidden' name='fileList[" + i + "].fileName' value=''>"
+    })
+
+
+    });
+
+    function checkExtension(fileName, fileSize){
+        if(regex.test(fileName)){
+            alert("업로드 할 수 없는 파일의 형식입니다.");
+            return false;
+        }
+
+        if(fileSize >= 5242880){
+            alert("파일 사이즈 초과");
+            return false;
+        }
+
+        return true;
+    }
+
+    function showUploadResult(files){
+        let str ="";
+        $(files).each(function(i, file){
+            str += "<li data-filename='"+ file.fileName.substring(file.index0f("_") + 1) +"' data-uuid='" + file.uuid + "' data-uploadpath='" + file.uploadPath + "' data- image='" + file.image +"'>";
+            if(file.image){
+                //encodeURIComponent("") : 쿼리스트링에 여러 특수문자로 인한 오류를 해결할 수 있다.
+                str += "<a href=\"javascript:showImage(\'" + file.uploadPath + "/" + file.fileName +"\');\"><img src='/upload/display?fileName=" + file.uploadPath + "/s_" + file.fileName + "'></a>";
+
+            }else{
+                str += "<a href='/upload/download?fileName=" + file.uploadPath + "/" + file.fileName + "'><img src='/img/attach.png' width='100'></a>";
+            }
+            str += "<span data-file='" + file.uploadPath + "/s_" + file.fileName + "' style='cursor: pointer;'>x</span>"
+            str += "</li>"
+        });
+        uploadResult.append(str);
+    }
+
+    $("input[type='file']").on("change", function(e){
+        let formData = new FormData();
+        let inputFile = $("input[name=' img_upload']");
+        // console.log(inputFile);
+        let files = inputFile[0].files;
+        // console.log(files);
+        for(let i=0; i<files.length; i++){
+            if(!checkExtension(files[i].name, files[i].size)){ return; }
+            formData.append("uploadFile", files[i]);
+        }
+
+        $.ajax({
+            url: "uploadAjaxAction",
+            type: "post",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(files){
+                showUploadResult(files);
+            }
+        });
+
+    });
+</script>
+<script>
+    function categoryChange(e) {
+        var good_a = ["일본", "중국", "몽골", "러시아"];
+        var good_b = ["영국", "프랑스", "폴란드", "터키", "이탈리아","스페인"];
+        var good_c = ["모로코", "마다가스카르", "콩고"];
+        var good_d = ["아르헨티나","칠레", "에콰도르", "베네수엘라"];
+        var good_e = ["캐나다", "미국", "그린란드", "멕시코", "쿠바"];
+        var good_f = ["호주"];
+        var target = document.getElementById("good");
+
+        if(e.value == "아시아") var d = good_a;
+        else if(e.value == "유럽") var d = good_b;
+        else if(e.value == "아프리카") var d = good_c;
+        else if(e.value == "남아메리카") var d = good_d;
+        else if(e.value == "북아메리카") var d = good_e;
+        else if(e.value == "오스트레일리아") var d = good_f;
+
+        target.options.length = 0;
+
+        for (x in d) {
+            var opt = document.createElement("option");
+            opt.value = d[x];
+            opt.innerHTML = d[x];
+            target.appendChild(opt);
+        }
+    }
+</script>
+</html>
