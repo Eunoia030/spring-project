@@ -1,8 +1,8 @@
 // 비밀번호 보기/감추기
 $("#pw + button").click(() => {
   let eye = $("#pw + button").children("img");
-  let see = "../../static/images/eye_see.png";
-  let nosee = "../../static/images/eye_nosee.png";
+  let see = "/images/eye_see.png";
+  let nosee = "/images/eye_nosee.png";
   if (eye.attr("src") == see) {
     eye.attr("src", nosee);
     $("#pw").attr("type", "text");
@@ -28,18 +28,6 @@ let spc = /[~!@#$%^&*()_+|<>?:{}]/;
 let pw = /^(?=.*[a-zA-Z])(?=.*[0-9]).{4,12}$/;
 let email =
   /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-// 중복 확인
-const checkDuplication = (target) => {
-  target.on("change", () => {
-    joinService.checkDuplication(target.val(), (result) => {
-      if (result) {
-        // 사용가능
-      } else {
-        // 중복
-      }
-    });
-  });
-};
 
 const checkName = () => {
   // null 여부 확인
@@ -74,14 +62,19 @@ const checkName = () => {
     $("#nameGuidMsg").removeAttr("style");
   }
   // 중복 확인
-  // joinService.checkDuplication($("#name").val(), (result) => {
-  //   if (result) {
-  //     // 중복인 경우
-  //     $("#name").attr("style", "border-color:#e00751;");
-  //     $("#nameGuidMsg").text("중복된 이름이 존재합니다.");
-  //     $("#nameGuidMsg").attr("style", "display:block;");
-  //   }
-  // });
+  joinService.checkDuplication($("#name").val(), "checkName",(result) => {
+    if (result) {
+      // 중복인 경우
+      $("#name").attr("style", "border-color:#e00751;");
+      $("#nameGuidMsg").text("중복된 이름이 존재합니다.");
+      $("#nameGuidMsg").attr("style", "display:block;");
+      console.log(result);
+      return false;
+    } else {
+      $("#name").removeAttr("style");
+      $("#nameGuidMsg").removeAttr("style");
+    }
+  });
   return true;
 };
 const checkEmail = () => {
@@ -106,14 +99,18 @@ const checkEmail = () => {
     $("#emailGuidMsg").removeAttr("style");
   }
   // 중복 확인
-  // joinService.checkDuplication($("#email").val(), (result) => {
-  //   if (result) {
-  //     // 중복인 경우
-  //     $("#email").attr("style", "border-color:#e00751;");
-  //     $("#emailGuidMsg").text("중복된 이메일이 존재합니다.");
-  //     $("#emailGuidMsg").attr("style", "display:block;");
-  //   }
-  // });
+  console.log($("#email").val());
+  joinService.checkDuplication($("#email").val(), "checkEmail", (result) => {
+    if (result) {
+      // 중복인 경우
+      $("#email").attr("style", "border-color:#e00751;");
+      $("#emailGuidMsg").text("중복된 이메일이 존재합니다.");
+      $("#emailGuidMsg").attr("style", "display:block;");
+    }else {
+      $("#email").removeAttr("style");
+      $("#emailGuidMsg").removeAttr("style");
+    }
+  });
   return true;
 };
 const checkPw = () => {
@@ -187,7 +184,8 @@ $(document).ready(() => {
     console.log(checkInputcheck02());
   });
 });
-const dobuleCheck = () => {
+const doubleCheck = () => {
+  console.log("d");
   if (
     checkName() &&
     checkEmail() &&
