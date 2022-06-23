@@ -1,5 +1,13 @@
+<<<<<<< HEAD
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+=======
 /target/
 !.mvn/wrapper/maven-wrapper.jar
+>>>>>>> a349a2e3e2a5cda0dc516d0534d2c891d20b452b
 
 ### STS ###
 .apt_generated
@@ -10,6 +18,8 @@
 .springBeans
 .sts4-cache
 
+<<<<<<< HEAD
+=======
 
 # Created by https://www.gitignore.io/api/git,java,maven,eclipse,windows
 
@@ -160,6 +170,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+>>>>>>> a349a2e3e2a5cda0dc516d0534d2c891d20b452b
 ### IntelliJ IDEA ###
 .idea
 *.iws
@@ -178,6 +189,8 @@ build/
 
 ### VS Code ###
 .vscode/
+<<<<<<< HEAD
+=======
 
 ### Some additional ignores (sort later)
 *.DS_Store
@@ -199,3 +212,4 @@ README.html
 *.iml
 .idea
 .exercism
+>>>>>>> a349a2e3e2a5cda0dc516d0534d2c891d20b452b

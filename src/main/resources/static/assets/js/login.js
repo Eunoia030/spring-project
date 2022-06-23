@@ -1,7 +1,7 @@
 $("#pw + button").click(() => {
   let eye = $("#pw + button").children("img");
-  let see = "../../static/images/eye_see.png";
-  let nosee = "../../static/images/eye_nosee.png";
+  let see = "/images/eye_see.png";
+  let nosee = "/images/eye_nosee.png";
   if (eye.attr("src") == see) {
     eye.attr("src", nosee);
     $("#pw").attr("type", "text");
